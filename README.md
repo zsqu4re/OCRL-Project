@@ -1,19 +1,5 @@
-# CMU 16745 OCRL Project
-Simulation about FOC_legged_wheel Robot
+Make sure all file name are in lowercase!!
 
-## Instrction:
-create a workspace for this project
-```
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-git clone git@github.com:zsqu4re/OCRL-Project.git
-cd ..
-catkin_make
-source devel/setup.bash
-```
-
-Run the Gazebo simulator
-```
-roscore
-roslaunch foc_urdf gazebo_urdf.launch
-```
+Install gazebo_ros_control:
+sudo apt update
+sudo apt install ros-noetic-gazebo-ros-control ros-noetic-ros-control ros-noetic-ros-controllers
