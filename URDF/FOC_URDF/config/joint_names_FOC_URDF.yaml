@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'leg01_left', 'leg12_left', 'leg23_left', 'tire_left', 'leg40_left', 'leg43_left', 'leg01_right', 'leg12_right', 'leg23_right', 'tire_right', 'leg04_right', 'leg43_right', ]
