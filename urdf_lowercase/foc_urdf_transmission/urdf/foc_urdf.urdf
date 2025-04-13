@@ -97,8 +97,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -155,8 +155,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -200,6 +200,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint23_left"
     type="revolute">
@@ -213,11 +214,12 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
+
   <link
     name="tire_left">
     <inertial>
@@ -271,8 +273,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -329,12 +331,12 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
-  <link
+  <!-- <link
     name="leg43_left">
     <inertial>
       <origin
@@ -374,6 +376,8 @@
       </geometry>
     </collision>
   </link>
+
+
   <joint
     name="joint43_left"
     type="revolute">
@@ -387,11 +391,13 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
-  </joint>
+  </joint> -->
+
+
   <link
     name="leg1_right">
     <inertial>
@@ -445,8 +451,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -503,8 +509,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -548,6 +554,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint
     name="joint23_right"
     type="revolute">
@@ -561,11 +568,12 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
+  
   <link
     name="tire_right">
     <inertial>
@@ -619,8 +627,8 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
@@ -631,7 +639,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0" />
+        value="0.01" />
       <inertia
         ixx="0"
         ixy="0"
@@ -677,12 +685,13 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
   </joint>
-  <link
+
+  <!-- <link
     name="leg43_right">
     <inertial>
       <origin
@@ -721,7 +730,8 @@
           filename="package://foc_urdf/meshes/leg43_right.STL" />
       </geometry>
     </collision>
-  </link>
+  </link> 
+
   <joint
     name="joint43_right"
     type="revolute">
@@ -735,13 +745,14 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0"
-      upper="0"
+      lower="-1.57"
+      upper="1.57"
       effort="0"
       velocity="0" />
-  </joint>
+  </joint> -->
 
-  <transmission name="trans_joint01_left">
+
+  <!-- <transmission name="trans_joint01_left">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint01_left">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -871,5 +882,69 @@
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
-  </transmission>
+  </transmission> -->
+
+
+  <gazebo>
+  <joint name="joint43_left" type="revolute">
+    <pose relative_to="leg04_left">-0.0496751074323783 0.00569066793808726 0.00600000000000021 0 0 0</pose>
+    <parent>leg04_left</parent>
+    <child>leg23_left</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+        <lower>-1.57</lower>
+        <upper>1.57</upper>
+        <effort>20</effort>
+        <velocity>30</velocity>
+      </limit>
+    </axis>
+    <dynamics>
+      <friction>0.01</friction>
+      <damping>0.01</damping>
+    </dynamics>
+  </joint>
+</gazebo>
+
+ <gazebo>
+  <joint name="joint43_right" type="revolute">
+    <pose relative_to="joint04_right">0.0487216928434121 0.0112337280754352 -0.00600000000000014 0 0 0</pose>
+    <parent>leg04_right</parent>
+    <child>leg23_right</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+        <lower>-1.57</lower>
+        <upper>1.57</upper>
+        <effort>20</effort>
+        <velocity>30</velocity>
+      </limit>
+    </axis>
+    <dynamics>
+      <friction>0.01</friction>
+      <damping>0.01</damping>
+    </dynamics>
+  </joint>
+</gazebo>
+
+
+
+  <!-- <gazebo>
+
+    <plugin name="gazebo_ros_joint_state_publisher"
+      filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <namespace>/</namespace>
+        <argument>joint_states:=joint_states</argument>
+      </ros>
+      <update_rate>10</update_rate>
+      <joint_name>HipLegLeft_Joint</joint_name>
+      <joint_name>HipLegRight_Joint</joint_name>
+      <joint_name>KneelLegLeft_Joint</joint_name>
+      <joint_name>KneelLegRight_Joint</joint_name>
+      <joint_name>KneelParallelJoint</joint_name>
+    </plugin>
+  </gazebo> -->
+
+
 </robot>
