@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="4.0984528210164E-05 2.37305558924844E-06 0.0204223765462588"
+        xyz="4.0985E-05 2.3731E-06 0.020422"
         rpy="0 0 0" />
       <mass
-        value="0.310805006221372" />
+        value="0.31081" />
       <inertia
-        ixx="0.000130060055334067"
-        ixy="1.40068261473326E-09"
-        ixz="-5.58346139662245E-08"
-        iyy="0.000212083244437428"
-        iyz="-1.56241494608367E-09"
-        izz="0.00027627121837463" />
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
     </inertial>
     <visual>
       <origin
@@ -31,7 +31,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
@@ -45,19 +45,19 @@
     </collision>
   </link>
   <link
-    name="leg1_left">
+    name="leg01_left">
     <inertial>
       <origin
-        xyz="0.0228437404724771 0.00297448356009389 0.00273603004602133"
+        xyz="0.02164360040863 0.00788914396965384 0.00273603004602131"
         rpy="0 0 0" />
       <mass
         value="0.0077756412577186" />
       <inertia
-        ixx="5.65788806889821E-07"
-        ixy="-3.1046668119979E-07"
-        ixz="1.28625098719397E-08"
-        iyy="2.90971653481286E-06"
-        iyz="1.67483221205042E-09"
+        ixx="8.0974092788803E-07"
+        ixy="-7.80181429853995E-07"
+        ixz="1.218675201773E-08"
+        iyy="2.66576441381465E-06"
+        iyz="4.44210517689572E-09"
         izz="3.42452671783294E-06" />
     </inertial>
     <visual>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg1_left.STL" />
+          filename="package://foc_urdf/meshes/leg01_left.STL" />
       </geometry>
       <material
         name="">
@@ -80,20 +80,20 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg1_left.STL" />
+          filename="package://foc_urdf/meshes/leg01_left.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="leg01_left"
+    name="joint01_left"
     type="revolute">
     <origin
-      xyz="0.029996 0.0665 0.03"
-      rpy="-1.5708 0 0" />
+      xyz="0.029996029229054 0.0665000000000001 0.0299999999999997"
+      rpy="-1.5707963267949 0 0" />
     <parent
       link="base_link" />
     <child
-      link="leg1_left" />
+      link="leg01_left" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -106,17 +106,17 @@
     name="leg12_left">
     <inertial>
       <origin
-        xyz="-0.0466848300125918 0.0408828561740607 0.00253876564892452"
+        xyz="-0.049203090372095 0.0378145101791477 0.00253876564892445"
         rpy="0 0 0" />
       <mass
         value="0.0122831195429796" />
       <inertia
-        ixx="6.08604976285197E-06"
-        ixy="6.28410365395957E-06"
-        ixz="7.2065464892233E-09"
-        iyy="7.74995063233245E-06"
-        iyz="-5.80881538188656E-09"
-        izz="1.37770829198511E-05" />
+        ixx="5.29096991824573E-06"
+        ixy="6.12657104175428E-06"
+        ixz="7.5631789667521E-09"
+        iyy="8.54503047693868E-06"
+        iyz="-5.33619455783566E-09"
+        izz="1.3777082919851E-05" />
     </inertial>
     <visual>
       <origin
@@ -143,13 +143,13 @@
     </collision>
   </link>
   <joint
-    name="leg12_left"
+    name="joint12_left"
     type="revolute">
     <origin
-      xyz="0.049581 0.006456 0.006"
+      xyz="0.0469765915200995 0.0171230794296379 0.00600000000000017"
       rpy="0 0 0" />
     <parent
-      link="leg1_left" />
+      link="leg01_left" />
     <child
       link="leg12_left" />
     <axis
@@ -164,17 +164,17 @@
     name="leg23_left">
     <inertial>
       <origin
-        xyz="-0.0388614315247889 -0.0330519585970062 -0.00343582660253763"
+        xyz="-0.0356351666546189 -0.0365072283905235 -0.00343582660253758"
         rpy="0 0 0" />
       <mass
         value="0.0111561368021954" />
       <inertia
-        ixx="5.86925345674372E-06"
-        ixy="-6.25749618763219E-06"
-        ixz="7.40824147483087E-09"
-        iyy="7.88777101104361E-06"
-        iyz="6.30067445356418E-09"
-        izz="1.36906272520063E-05" />
+        ixx="7.04001293690423E-06"
+        ixy="-6.33630644306385E-06"
+        ixz="6.79322011961657E-09"
+        iyy="6.71701153088307E-06"
+        iyz="6.95936065494416E-09"
+        izz="1.36906272520062E-05" />
     </inertial>
     <visual>
       <origin
@@ -201,10 +201,10 @@
     </collision>
   </link>
   <joint
-    name="leg23_left"
+    name="joint23_left"
     type="revolute">
     <origin
-      xyz="-0.079023 0.06914 0"
+      xyz="-0.083282000427136 0.0639461367469102 0"
       rpy="0 0 0" />
     <parent
       link="leg12_left" />
@@ -222,16 +222,16 @@
     name="tire_left">
     <inertial>
       <origin
-        xyz="9.20097331658098E-15 -9.71445146547012E-16 0.0133518971401667"
+        xyz="1.35030875370035E-14 3.69149155687865E-15 0.0133518971401625"
         rpy="0 0 0" />
       <mass
         value="0.0328045076876881" />
       <inertia
         ixx="6.3144578615962E-06"
-        ixy="1.21760986167806E-21"
-        ixz="-1.65589012446276E-22"
+        ixy="-5.29395592033938E-23"
+        ixz="1.27833848155711E-21"
         iyy="6.3144578615962E-06"
-        iyz="-3.82998423048658E-20"
+        iyz="-6.68782135783803E-23"
         izz="1.05787727489276E-05" />
     </inertial>
     <visual>
@@ -259,10 +259,10 @@
     </collision>
   </link>
   <joint
-    name="tire_left"
+    name="joint_tire_left"
     type="revolute">
     <origin
-      xyz="-0.079023 0.06914 0.0095"
+      xyz="-0.0832820004271731 0.0639461367469053 0.00950000000000407"
       rpy="0 0 0" />
     <parent
       link="leg12_left" />
@@ -277,20 +277,20 @@
       velocity="0" />
   </joint>
   <link
-    name="leg4_left">
+    name="leg04_left">
     <inertial>
       <origin
-        xyz="-0.0133315934472238 0.00204123027878217 0.00673551057779107"
+        xyz="-0.0133917854196739 0.00159940244044304 0.00673551057779107"
         rpy="0 0 0" />
       <mass
         value="0.0104336042175876" />
       <inertia
-        ixx="8.49244420008175E-07"
-        ixy="3.62759145927668E-07"
-        ixz="1.28216694376876E-08"
-        iyy="3.16293813465149E-06"
-        iyz="-1.96315466597069E-09"
-        izz="3.9627706999722E-06" />
+        ixx="8.27801977631823E-07"
+        ixy="2.85522635646174E-07"
+        ixz="1.28795591098106E-08"
+        iyy="3.18438057702784E-06"
+        iyz="-1.53822642959961E-09"
+        izz="3.96277069997221E-06" />
     </inertial>
     <visual>
       <origin
@@ -298,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg4_left.STL" />
+          filename="package://foc_urdf/meshes/leg04_left.STL" />
       </geometry>
       <material
         name="">
@@ -312,20 +312,20 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg4_left.STL" />
+          filename="package://foc_urdf/meshes/leg04_left.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="leg40_left"
+    name="joint04_left"
     type="revolute">
     <origin
-      xyz="-0.030004 0.0665 0.03"
-      rpy="-1.5708 0 0" />
+      xyz="-0.0300039707709461 0.0665000000000001 0.0299999999999997"
+      rpy="-1.5707963267949 0 0" />
     <parent
       link="base_link" />
     <child
-      link="leg4_left" />
+      link="leg04_left" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -338,17 +338,17 @@
     name="leg43_left">
     <inertial>
       <origin
-        xyz="0.0411206964487428 0.0349764119904535 -0.00343582660253756"
+        xyz="0.0377065967962982 0.0386325462558629 -0.00343582660253766"
         rpy="0 0 0" />
       <mass
         value="0.0111561368021954" />
       <inertia
-        ixx="5.86925345674372E-06"
-        ixy="-6.25749618763219E-06"
-        ixz="7.40824147483257E-09"
-        iyy="7.88777101104361E-06"
-        iyz="6.30067445356577E-09"
-        izz="1.36906272520063E-05" />
+        ixx="7.04001293690422E-06"
+        ixy="-6.33630644306385E-06"
+        ixz="6.79322011961829E-09"
+        iyy="6.71701153088307E-06"
+        iyz="6.95936065494606E-09"
+        izz="1.36906272520062E-05" />
     </inertial>
     <visual>
       <origin
@@ -375,13 +375,13 @@
     </collision>
   </link>
   <joint
-    name="leg43_left"
+    name="joint43_left"
     type="revolute">
     <origin
-      xyz="-0.0494240235292409 0.00756742348365974 0.00600000000000014"
+      xyz="-0.0496471723579536 0.0059294415301617 0.00600000000000026"
       rpy="0 0 0" />
     <parent
-      link="leg4_left" />
+      link="leg04_left" />
     <child
       link="leg43_left" />
     <axis
@@ -396,7 +396,7 @@
     name="leg1_right">
     <inertial>
       <origin
-        xyz="-0.0227911887514543 -0.00335346783462503 -0.00273603004602131"
+        xyz="-0.0227911887514544 -0.00335346783462503 -0.00273603004602133"
         rpy="0 0 0" />
       <mass
         value="0.0077756412577186" />
@@ -433,11 +433,11 @@
     </collision>
   </link>
   <joint
-    name="leg01_right"
+    name="joint01_right"
     type="revolute">
     <origin
-      xyz="-0.030004 -0.0665 0.03"
-      rpy="-1.5708 0 0" />
+      xyz="-0.0300039707709461 -0.0664999999999999 0.0300000000000001"
+      rpy="-1.5707963267949 0 0" />
     <parent
       link="base_link" />
     <child
@@ -451,15 +451,15 @@
       velocity="0" />
   </joint>
   <link
-    name="leg2_right">
+    name="leg12_right">
     <inertial>
       <origin
-        xyz="0.0457106331447941 0.0419692661331549 -0.00253876564892458"
+        xyz="0.0457106331447956 0.0419692661331571 -0.00253876564892457"
         rpy="0 0 0" />
       <mass
         value="0.0122831195429796" />
       <inertia
-        ixx="6.38240764921689E-06"
+        ixx="6.3824076492169E-06"
         ixy="-6.31626795518505E-06"
         ixz="7.06796980851464E-09"
         iyy="7.45359274596755E-06"
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg2_right.STL" />
+          filename="package://foc_urdf/meshes/leg12_right.STL" />
       </geometry>
       <material
         name="">
@@ -486,12 +486,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg2_right.STL" />
+          filename="package://foc_urdf/meshes/leg12_right.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="leg12_right"
+    name="joint12_right"
     type="revolute">
     <origin
       xyz="-0.0494673872070477 -0.00727857148813968 -0.00600000000000005"
@@ -499,7 +499,7 @@
     <parent
       link="leg1_right" />
     <child
-      link="leg2_right" />
+      link="leg12_right" />
     <axis
       xyz="0 0 -1" />
     <limit
@@ -512,16 +512,16 @@
     name="leg23_right">
     <inertial>
       <origin
-        xyz="0.039870437226612 -0.0318275205226381 0.0034358266025371"
+        xyz="0.0398704372266141 -0.0318275205226357 0.00343582660253709"
         rpy="0 0 0" />
       <mass
         value="0.0111561368021954" />
       <inertia
-        ixx="5.48222134154418E-06"
+        ixx="5.48222134154417E-06"
         ixy="6.18265586632698E-06"
         ixz="7.60058755499205E-09"
         iyy="8.27480312624313E-06"
-        iyz="-6.06725713466104E-09"
+        iyz="-6.06725713466105E-09"
         izz="1.36906272520062E-05" />
     </inertial>
     <visual>
@@ -549,13 +549,13 @@
     </collision>
   </link>
   <joint
-    name="leg23_right"
+    name="joint23_right"
     type="revolute">
     <origin
       xyz="0.0773757935946784 0.0709787754585397 0"
       rpy="0 0 0" />
     <parent
-      link="leg2_right" />
+      link="leg12_right" />
     <child
       link="leg23_right" />
     <axis
@@ -570,16 +570,16 @@
     name="tire_right">
     <inertial>
       <origin
-        xyz="9.25648446781224E-15 -2.22044604925031E-16 -0.0133518971401667"
+        xyz="9.25648446781224E-15 -1.94289029309402E-16 -0.0133518971401667"
         rpy="0 0 0" />
       <mass
         value="0.0328045076876881" />
       <inertia
         ixx="6.31445786159621E-06"
-        ixy="-1.05879118406788E-21"
-        ixz="-6.80477309727018E-22"
+        ixy="-1.16467030247466E-21"
+        ixz="-6.83290103793549E-22"
         iyy="6.3144578615962E-06"
-        iyz="-1.14791194736432E-20"
+        iyz="-1.14811379690367E-20"
         izz="1.05787727489276E-05" />
     </inertial>
     <visual>
@@ -607,13 +607,13 @@
     </collision>
   </link>
   <joint
-    name="tire_right"
+    name="joint_tire_right"
     type="revolute">
     <origin
       xyz="0.0773757935946757 0.0709787754585395 -0.00949999999999949"
       rpy="0 0 0" />
     <parent
-      link="leg2_right" />
+      link="leg12_right" />
     <child
       link="tire_right" />
     <axis
@@ -625,10 +625,10 @@
       velocity="0" />
   </joint>
   <link
-    name="leg4_right">
+    name="leg04_right">
     <inertial>
       <origin
-        xyz="0.0134781355327273 -0.000487716571960756 -0.00673551057779109"
+        xyz="0.0134781355327333 -0.000487716571957592 -0.00673551057779109"
         rpy="0 0 0" />
       <mass
         value="0.0104336042175876" />
@@ -637,7 +637,7 @@
         ixy="8.76277457522418E-08"
         ixz="1.29626063921825E-08"
         iyy="3.21531012742419E-06"
-        iyz="-4.6906175842721E-10"
+        iyz="-4.69061758427244E-10"
         izz="3.96277069997219E-06" />
     </inertial>
     <visual>
@@ -646,7 +646,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg4_right.STL" />
+          filename="package://foc_urdf/meshes/leg04_right.STL" />
       </geometry>
       <material
         name="">
@@ -660,12 +660,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://foc_urdf/meshes/leg4_right.STL" />
+          filename="package://foc_urdf/meshes/leg04_right.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="leg04_right"
+    name="joint04_right"
     type="revolute">
     <origin
       xyz="0.0299960292290539 -0.0664999999999999 0.0300000000000001"
@@ -673,7 +673,7 @@
     <parent
       link="base_link" />
     <child
-      link="leg4_right" />
+      link="leg04_right" />
     <axis
       xyz="0 0 1" />
     <limit
@@ -686,7 +686,7 @@
     name="leg43_right">
     <inertial>
       <origin
-        xyz="-0.0421884532686701 0.0336807880395846 0.00343582660253711"
+        xyz="-0.042188453268668 0.0336807880395871 0.00343582660253713"
         rpy="0 0 0" />
       <mass
         value="0.0111561368021954" />
@@ -723,13 +723,13 @@
     </collision>
   </link>
   <joint
-    name="leg43_right"
+    name="joint43_right"
     type="revolute">
     <origin
       xyz="0.0499672968829129 -0.00180810459182268 -0.00600000000000014"
       rpy="0 0 0" />
     <parent
-      link="leg4_right" />
+      link="leg04_right" />
     <child
       link="leg43_right" />
     <axis
