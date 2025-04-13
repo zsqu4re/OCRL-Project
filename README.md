@@ -8,7 +8,7 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 git clone git@github.com:zsqu4re/OCRL-Project.git
 cd ..
-catkin make
+catkin_make
 source devel/setup.bash
 ```
 
