@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="foc_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="4.0984528210164E-05 2.37305558924844E-06 0.0204223765462588"
+        rpy="0 0 0" />
+      <mass
+        value="0.310805006221372" />
+      <inertia
+        ixx="0.000130060055334067"
+        ixy="1.40068261473326E-09"
+        ixz="-5.58346139662245E-08"
+        iyy="0.000212083244437428"
+        iyz="-1.56241494608367E-09"
+        izz="0.00027627121837463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leg1_left">
+    <inertial>
+      <origin
+        xyz="0.0228437404724771 0.00297448356009389 0.00273603004602133"
+        rpy="0 0 0" />
+      <mass
+        value="0.0077756412577186" />
+      <inertia
+        ixx="5.65788806889821E-07"
+        ixy="-3.1046668119979E-07"
+        ixz="1.28625098719397E-08"
+        iyy="2.90971653481286E-06"
+        iyz="1.67483221205042E-09"
+        izz="3.42452671783294E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg01_left"
+    type="revolute">
+    <origin
+      xyz="0.029996 0.0665 0.03"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg12_left">
+    <inertial>
+      <origin
+        xyz="-0.0466848300125918 0.0408828561740607 0.00253876564892452"
+        rpy="0 0 0" />
+      <mass
+        value="0.0122831195429796" />
+      <inertia
+        ixx="6.08604976285197E-06"
+        ixy="6.28410365395957E-06"
+        ixz="7.2065464892233E-09"
+        iyy="7.74995063233245E-06"
+        iyz="-5.80881538188656E-09"
+        izz="1.37770829198511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg12_left"
+    type="revolute">
+    <origin
+      xyz="0.049581 0.006456 0.006"
+      rpy="0 0 0" />
+    <parent
+      link="leg1_left" />
+    <child
+      link="leg12_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg23_left">
+    <inertial>
+      <origin
+        xyz="-0.0388614315247889 -0.0330519585970062 -0.00343582660253763"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="5.86925345674372E-06"
+        ixy="-6.25749618763219E-06"
+        ixz="7.40824147483087E-09"
+        iyy="7.88777101104361E-06"
+        iyz="6.30067445356418E-09"
+        izz="1.36906272520063E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg23_left"
+    type="revolute">
+    <origin
+      xyz="-0.079023 0.06914 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_left" />
+    <child
+      link="leg23_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="tire_left">
+    <inertial>
+      <origin
+        xyz="9.20097331658098E-15 -9.71445146547012E-16 0.0133518971401667"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328045076876881" />
+      <inertia
+        ixx="6.3144578615962E-06"
+        ixy="1.21760986167806E-21"
+        ixz="-1.65589012446276E-22"
+        iyy="6.3144578615962E-06"
+        iyz="-3.82998423048658E-20"
+        izz="1.05787727489276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tire_left"
+    type="revolute">
+    <origin
+      xyz="-0.079023 0.06914 0.0095"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_left" />
+    <child
+      link="tire_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg4_left">
+    <inertial>
+      <origin
+        xyz="-0.0133315934472238 0.00204123027878217 0.00673551057779107"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104336042175876" />
+      <inertia
+        ixx="8.49244420008175E-07"
+        ixy="3.62759145927668E-07"
+        ixz="1.28216694376876E-08"
+        iyy="3.16293813465149E-06"
+        iyz="-1.96315466597069E-09"
+        izz="3.9627706999722E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg4_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg4_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg40_left"
+    type="revolute">
+    <origin
+      xyz="-0.030004 0.0665 0.03"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg4_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg43_left">
+    <inertial>
+      <origin
+        xyz="0.0411206964487428 0.0349764119904535 -0.00343582660253756"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="5.86925345674372E-06"
+        ixy="-6.25749618763219E-06"
+        ixz="7.40824147483257E-09"
+        iyy="7.88777101104361E-06"
+        iyz="6.30067445356577E-09"
+        izz="1.36906272520063E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg43_left"
+    type="revolute">
+    <origin
+      xyz="-0.0494240235292409 0.00756742348365974 0.00600000000000014"
+      rpy="0 0 0" />
+    <parent
+      link="leg4_left" />
+    <child
+      link="leg43_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg1_right">
+    <inertial>
+      <origin
+        xyz="-0.0227911887514543 -0.00335346783462503 -0.00273603004602131"
+        rpy="0 0 0" />
+      <mass
+        value="0.0077756412577186" />
+      <inertia
+        ixx="5.76746542351136E-07"
+        ixy="-3.49218596514838E-07"
+        ixz="1.28329211282965E-08"
+        iyy="2.89875879935154E-06"
+        iyz="1.88821568132457E-09"
+        izz="3.42452671783294E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg01_right"
+    type="revolute">
+    <origin
+      xyz="-0.030004 -0.0665 0.03"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg2_right">
+    <inertial>
+      <origin
+        xyz="0.0457106331447941 0.0419692661331549 -0.00253876564892458"
+        rpy="0 0 0" />
+      <mass
+        value="0.0122831195429796" />
+      <inertia
+        ixx="6.38240764921689E-06"
+        ixy="-6.31626795518505E-06"
+        ixz="7.06796980851464E-09"
+        iyy="7.45359274596755E-06"
+        iyz="5.97665886833488E-09"
+        izz="1.37770829198511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg2_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg2_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg12_right"
+    type="revolute">
+    <origin
+      xyz="-0.0494673872070477 -0.00727857148813968 -0.00600000000000005"
+      rpy="0 0 0" />
+    <parent
+      link="leg1_right" />
+    <child
+      link="leg2_right" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg23_right">
+    <inertial>
+      <origin
+        xyz="0.039870437226612 -0.0318275205226381 0.0034358266025371"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="5.48222134154418E-06"
+        ixy="6.18265586632698E-06"
+        ixz="7.60058755499205E-09"
+        iyy="8.27480312624313E-06"
+        iyz="-6.06725713466104E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg23_right"
+    type="revolute">
+    <origin
+      xyz="0.0773757935946784 0.0709787754585397 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg2_right" />
+    <child
+      link="leg23_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="tire_right">
+    <inertial>
+      <origin
+        xyz="9.25648446781224E-15 -2.22044604925031E-16 -0.0133518971401667"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328045076876881" />
+      <inertia
+        ixx="6.31445786159621E-06"
+        ixy="-1.05879118406788E-21"
+        ixz="-6.80477309727018E-22"
+        iyy="6.3144578615962E-06"
+        iyz="-1.14791194736432E-20"
+        izz="1.05787727489276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tire_right"
+    type="revolute">
+    <origin
+      xyz="0.0773757935946757 0.0709787754585395 -0.00949999999999949"
+      rpy="0 0 0" />
+    <parent
+      link="leg2_right" />
+    <child
+      link="tire_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg4_right">
+    <inertial>
+      <origin
+        xyz="0.0134781355327273 -0.000487716571960756 -0.00673551057779109"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104336042175876" />
+      <inertia
+        ixx="7.96872427235464E-07"
+        ixy="8.76277457522418E-08"
+        ixz="1.29626063921825E-08"
+        iyy="3.21531012742419E-06"
+        iyz="-4.6906175842721E-10"
+        izz="3.96277069997219E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg4_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg4_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg04_right"
+    type="revolute">
+    <origin
+      xyz="0.0299960292290539 -0.0664999999999999 0.0300000000000001"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg4_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg43_right">
+    <inertial>
+      <origin
+        xyz="-0.0421884532686701 0.0336807880395846 0.00343582660253711"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="5.48222134154417E-06"
+        ixy="6.18265586632698E-06"
+        ixz="7.60058755497661E-09"
+        iyy="8.27480312624313E-06"
+        iyz="-6.06725713464752E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg43_right"
+    type="revolute">
+    <origin
+      xyz="0.0499672968829129 -0.00180810459182268 -0.00600000000000014"
+      rpy="0 0 0" />
+    <parent
+      link="leg4_right" />
+    <child
+      link="leg43_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
