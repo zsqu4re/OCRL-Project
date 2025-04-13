@@ -793,50 +793,24 @@
     </joint>
   </gazebo>
 
-
-
   <transmission name="trans_joint01_left">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="joint01_left">
-        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      </joint>
-      <actuator name="motor_joint01_left">
-        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
-  </transmission>
-
-
-
-  <!-- <transmission name="trans_joint12_left">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint12_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <joint name="joint01_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_joint12_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <actuator name="motor_joint01_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <transmission name="trans_joint23_left">
+  <transmission name="trans_joint01_right">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint23_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <joint name="joint01_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_joint23_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> -->
-
-  <transmission name="trans_joint_tire_left">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_tire_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint_tire_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <actuator name="motor_joint01_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -844,65 +818,10 @@
   <transmission name="trans_joint04_left">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint04_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor_joint04_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <!-- <transmission name="trans_joint43_left">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint43_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint43_left">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> -->
-
-  <transmission name="trans_joint01_right">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint01_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint01_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <!-- <transmission name="trans_joint12_right">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint12_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint12_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="trans_joint23_right">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint23_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint23_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission> -->
-
-  <transmission name="trans_joint_tire_right">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint_tire_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="motor_joint_tire_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -910,28 +829,43 @@
   <transmission name="trans_joint04_right">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint04_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor_joint04_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <!-- <transmission name="trans_joint43_right">
+  <transmission name="trans_joint_tire_left">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint43_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <joint name="joint_tire_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="motor_joint43_right">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <actuator name="motor_joint_tire_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
-  </transmission> -->
+  </transmission>
 
+  <transmission name="trans_joint_tire_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_tire_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint_tire_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
 
-<gazebo>
+<!-- <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <ros>
       <namespace>/</namespace>
@@ -941,6 +875,6 @@
     <robotParam>robot_description</robotParam>
     <updateRate>100</updateRate>
   </plugin>
-</gazebo>
+</gazebo> -->
 
 </robot>

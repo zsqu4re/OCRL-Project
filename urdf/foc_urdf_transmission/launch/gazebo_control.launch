@@ -13,6 +13,12 @@
   <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" ns="gazebo_ros_control"/>
 
   <!-- Start controllers -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner"
-        args="joint_state_controller effort_joint_trajectory_controller"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner"
+      args="joint_state_controller effort_joint_trajectory_controller"
+      ns="gazebo_ros_control"/>
+  
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="joint_state_controller effort_joint_trajectory_controller"
+        ns="gazebo_ros_control"/> -->
+
 </launch>
