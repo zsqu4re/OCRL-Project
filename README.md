@@ -24,6 +24,10 @@ roscore
 roslaunch foc_urdf gazebo_control.launch
 ```
 
+4. IMU data
+```
+rostopic echo /imu/data
+```
 
 ## Issue
 ~~1. Read the IMU date of the robot~~
