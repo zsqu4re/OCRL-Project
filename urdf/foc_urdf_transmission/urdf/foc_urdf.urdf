@@ -865,6 +865,18 @@
     </plugin>
   </gazebo>
 
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <gaussianNoise>0.0001</gaussianNoise>
+      <bodyName>base_link</bodyName>
+      <frameName>base_link</frameName>
+      <topicName>imu/data</topicName>
+    </plugin>
+  </gazebo>
+
+
 <!-- <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
     <ros>
