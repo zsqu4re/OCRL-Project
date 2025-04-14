@@ -7,7 +7,7 @@
 
   <!-- Spawn robot into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-        args="-param robot_description -urdf -model foc" />
+        args="-param robot_description -urdf -model foc -x 0 -y 0 -z 1" />
 
   <!-- Load controllers -->
   <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" ns="gazebo_ros_control"/>
