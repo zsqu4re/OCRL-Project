@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- lqr_vmc_controller.launch -->
+<launch>
+  <!-- 加载参数YAML文件 -->
+  <rosparam command="load" file="$(find lqr_controller)/config/controller_params.yaml" />
+  
+  <!-- 设置日志级别，便于调试 -->
+  <env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find lqr_controller)/config/rosconsole.config" />
+  
+  <!-- 启动控制器节点 -->
+  <node name="lqr_vmc_controller" pkg="lqr_controller" type="lqr_controller_node" output="screen">
+    <!-- 可以在这里重写任何参数，以覆盖YAML文件中的默认值 -->
+    <param name="control_rate" value="100.0" />
+  </node>
+  
+  <!-- 设置初始期望状态 -->
+  <node name="set_initial_goal" pkg="rostopic" type="rostopic" 
+        args="pub -1 /desired_state std_msgs/Float64MultiArray 
+        '{data: [0.0, 0.0, 0.08, 0.0, 0.0, 0.0]}'" />
+        
+  <!-- 可选：在gazebo中运行时与controllers.yaml集成 -->
+  <arg name="use_gazebo_controllers" default="false" />
+  <group if="$(arg use_gazebo_controllers)">
+    <!-- 加载控制器 -->
+    <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" ns="gazebo_ros_control"/>
+    
+    <!-- 启动控制器 -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner"
+          args="joint_state_controller effort_joint_trajectory_controller"
+          ns="gazebo_ros_control"/>
+  </group>
+</launch>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- lqr_vmc_gazebo.launch - 在Gazebo中启动LQR-VMC控制器 -->
+<launch>
+  <!-- 设置参数 -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="model_path" default="$(find foc_urdf)/urdf/foc_urdf.urdf"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.5"/>
+  
+  <!-- 启动Gazebo仿真环境 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+
+  <!-- 加载机器人描述参数 -->
+  <param name="robot_description" textfile="$(arg model_path)" />
+  
+  <!-- 设置坐标变换发布 -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_footprint" 
+        args="0 0 0 0 0 0 base_link base_footprint 40" />
+  
+  <!-- 加载控制器参数 -->
+  <rosparam command="load" file="$(find foc_urdf)/config/controllers.yaml" ns="gazebo_ros_control"/>
+  <rosparam command="load" file="$(find lqr_controller)/config/controller_params.yaml" />
+  
+  <!-- 设置日志级别，便于调试 -->
+  <env name="ROSCONSOLE_CONFIG_FILE" 
+       value="$(find lqr_controller)/config/rosconsole.config" />
+  
+  <!-- 将机器人模型加载到Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model foc_urdf
+              -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)" output="screen" />
+  
+  <!-- 启动关节控制器 -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="joint_state_controller effort_joint_trajectory_controller"
+        ns="gazebo_ros_control"/>
+  
+  <!-- 启动机器人状态发布器 -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+  
+  <!-- 启动LQR+VMC控制器 -->
+  <node name="lqr_vmc_controller" pkg="lqr_controller" type="lqr_controller_node" output="screen">
+    <!-- 将控制器设置为发布到Gazebo中的控制器话题 -->
+    <param name="controller_topic" value="/effort_joint_trajectory_controller/command" />
+  </node>
+  
+  <!-- 设置初始期望状态 - 站立平衡位置 -->
+  <node name="set_initial_goal" pkg="rostopic" type="rostopic" 
+        args="pub -1 /desired_state std_msgs/Float64MultiArray 
+        '{data: [0.0, 0.0, 0.08, 0.0, 0.0, 0.0]}'" />
+</launch>

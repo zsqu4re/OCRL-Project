@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- foc_balance_control.launch - FOC平衡机器人主启动文件 -->
+<launch>
+  <!-- 设置参数 -->
+  <arg name="sim" default="true" doc="如果为true，则在Gazebo中启动仿真，否则连接到真实机器人"/>
+  <arg name="debug" default="false" doc="如果为true，则启用调试输出"/>
+  <arg name="gui" default="true" doc="如果为true，则启动Gazebo GUI（仅在仿真模式下有效）"/>
+  <arg name="test" default="false" doc="如果为true，则启动测试脚本"/>
+  
+  <!-- Gazebo仿真模式 -->
+  <group if="$(arg sim)">
+    <include file="$(find lqr_controller)/launch/lqr_vmc_gazebo.launch">
+      <arg name="debug" value="$(arg debug)"/>
+      <arg name="gui" value="$(arg gui)"/>
+    </include>
+  </group>
+  
+  <!-- 真实机器人模式 -->
+  <group unless="$(arg sim)">
+    <include file="$(find lqr_controller)/launch/lqr_vmc_controller.launch"/>
+    
+    <!-- 这里可以添加启动真实机器人硬件接口的节点 -->
+    <!-- <include file="$(find foc_driver)/launch/hardware_interface.launch"/> -->
+  </group>
+  
+  <!-- 如果需要，启动测试脚本 -->
+  <group if="$(arg test)">
+    <node name="controller_test" pkg="lqr_controller" type="test_gazebo_controller.py" 
+          output="screen" if="$(arg sim)"/>
+          
+    <!-- 真实机器人的测试可能需要更谨慎的参数 -->
+    <node name="controller_test_real" pkg="lqr_controller" type="test_controller.py" 
+          output="screen" unless="$(arg sim)"/>
+  </group>
+  
+  <!-- RViz可视化 -->
+  <node name="rviz" pkg="rviz" type="rviz" 
+        args="-d $(find foc_urdf)/rviz/foc_balance.rviz" if="$(arg gui)"/>
+</launch>
