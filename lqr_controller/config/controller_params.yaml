@@ -1,0 +1,37 @@
+# LQR控制器参数
+control_rate: 100.0        # 控制频率(Hz)
+current_L0: 0.08           # 默认腿长度(m)
+
+# 机器人关节配置
+joint_names:
+  front_left: "joint01_left"
+  front_right: "joint01_right"
+  rear_left: "joint04_left"
+  rear_right: "joint04_right"
+  tire_left: "joint_tire_left"
+  tire_right: "joint_tire_right"
+
+# 控制输出发布话题
+controller_topic: "/effort_joint_trajectory_controller/command"
+
+# 安全限制参数
+max_force: 20.0            # 最大力(N)
+max_torque: 5.0            # 最大力矩(Nm)
+max_motor_torque: 10.0     # 最大电机力矩(Nm)
+
+# VMC参数
+vmc:
+  l1: 0.05                 # 连杆1长度(m)
+  l2: 0.105                # 连杆2长度(m)
+  l3: 0.105                # 连杆3长度(m)
+  l4: 0.05                 # 连杆4长度(m)
+  L: 0.06                  # 底盘长度(m)
+
+# 状态初始化
+default_state:
+  theta: 0.0               # 腿角度(rad)
+  theta_dot: 0.0           # 腿角速度(rad/s)
+  l0: 0.08                 # 腿长度(m)
+  l0_dot: 0.0              # 腿长度变化率(m/s)
+  phi: 0.0                 # 机身姿态角(rad)
+  phi_dot: 0.0             # 机身姿态角速度(rad/s)

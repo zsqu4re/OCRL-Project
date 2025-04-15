@@ -1,9 +1,0 @@
-<!-- lqr_controller.launch -->
-<launch>
-  <!-- 加载参数 -->
-  <param name="control_rate" value="200.0" />
-  <param name="current_L0" value="0.08" />
-  
-  <!-- 启动控制器节点 -->
-  <node name="lqr_controller" pkg="lqr_controller" type="lqr_controller_node" output="screen" />
-</launch>
