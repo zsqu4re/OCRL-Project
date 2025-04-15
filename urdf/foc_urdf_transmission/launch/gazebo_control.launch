@@ -10,15 +10,18 @@
         args="-param robot_description -urdf -model foc -x 0 -y 0 -z 1" />
 
   <!-- Load controllers -->
-  <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" ns="gazebo_ros_control"/>
+  <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" />
 
-  <!-- Start controllers -->
-<node name="controller_spawner" pkg="controller_manager" type="spawner"
-      args="joint_state_controller effort_joint_trajectory_controller"
-      ns="gazebo_ros_control"/>
-  
-  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner"
-        args="joint_state_controller effort_joint_trajectory_controller"
-        ns="gazebo_ros_control"/> -->
+  <!-- Start controller -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        respawn="false" output="screen"
+        args="joint_state_controller
+              joint01_left_effort_controller
+              joint01_right_effort_controller
+              joint04_left_effort_controller
+              joint04_right_effort_controller
+              joint_tire_left_effort_controller
+              joint_tire_right_effort_controller" />
+
 
 </launch>
