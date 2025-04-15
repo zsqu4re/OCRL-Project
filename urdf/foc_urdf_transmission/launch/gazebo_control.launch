@@ -23,5 +23,4 @@
               joint_tire_left_effort_controller
               joint_tire_right_effort_controller" />
 
-
 </launch>

@@ -166,18 +166,18 @@ void LQRController::desiredStateCallback(const std_msgs::Float64MultiArray::Cons
     desired_state_(4) = msg->data[4];  // phi（机身姿态角）
     desired_state_(5) = msg->data[5];  // phi_dot（机身姿态角速度）
     
-    ROS_INFO("收到新的目标状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+    ROS_INFO("New goal state: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
              msg->data[0], msg->data[1], msg->data[2],
              msg->data[3], msg->data[4], msg->data[5]);
   } else {
-    ROS_WARN("收到的目标状态数组长度不足 (%zu < 6)", msg->data.size());
+    ROS_WARN("length not enough (%zu < 6)", msg->data.size());
   }
 }
 
 void LQRController::controlLoop(const ros::TimerEvent& event) {
   // 如果状态尚未初始化，则跳过此周期
   if (!state_initialized_) {
-    ROS_WARN_THROTTLE(1.0, "等待状态初始化");
+    ROS_WARN_THROTTLE(1.0, "Waiting for joint state initialization...");
     return;
   }
   
@@ -215,7 +215,7 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
     
     // 检查计算结果是否有效
     if (std::isnan(motor_torques(0)) || std::isnan(motor_torques(1))) {
-      ROS_WARN("VMC转换产生了NaN值，使用零力矩");
+      ROS_WARN("VMC NAN, zero torques");
       motor_torques << 0.0, 0.0;
     }
     
@@ -229,7 +229,7 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
     }
   }
   catch (const std::exception& e) {
-    ROS_ERROR("VMC转换异常: %s", e.what());
+    ROS_ERROR("VMC error: %s", e.what());
     motor_torques << 0.0, 0.0;  // 出错时使用零力矩
   }
   
@@ -261,14 +261,14 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
   joint_cmd_pub_.publish(cmd_msg);
   
   // 添加调试日志，便于观察控制器工作状态
-  ROS_DEBUG("当前状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+  ROS_DEBUG("Curretn State: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
            current_state_(0), current_state_(1), current_state_(2),
            current_state_(3), current_state_(4), current_state_(5));
-  ROS_DEBUG("目标状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+  ROS_DEBUG("Goal state: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
            desired_state_(0), desired_state_(1), desired_state_(2),
            desired_state_(3), desired_state_(4), desired_state_(5));
-  ROS_DEBUG("LQR控制输出: F=%.3f, Tp=%.3f", F, Tp);
-  ROS_DEBUG("VMC转换后电机扭矩: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
+  ROS_DEBUG("LQR control output: F=%.3f, Tp=%.3f", F, Tp);
+  ROS_DEBUG("VMC motor output: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
 }
 
 Eigen::MatrixXd LQRController::calculateK(double L0) {

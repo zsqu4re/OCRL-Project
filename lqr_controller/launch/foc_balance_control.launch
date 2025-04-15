@@ -34,6 +34,6 @@
   </group>
   
   <!-- RViz可视化 -->
-  <node name="rviz" pkg="rviz" type="rviz" 
-        args="-d $(find foc_urdf)/rviz/foc_balance.rviz" if="$(arg gui)"/>
+  <!-- <node name="rviz" pkg="rviz" type="rviz" 
+        args="-d $(find foc_urdf)/rviz/foc_balance.rviz" if="$(arg gui)"/> -->
 </launch>

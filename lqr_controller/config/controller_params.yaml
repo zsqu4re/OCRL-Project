@@ -3,13 +3,41 @@ control_rate: 100.0        # 控制频率(Hz)
 current_L0: 0.08           # 默认腿长度(m)
 
 # 机器人关节配置
-joint_names:
-  front_left: "joint01_left"
-  front_right: "joint01_right"
-  rear_left: "joint04_left"
-  rear_right: "joint04_right"
-  tire_left: "joint_tire_left"
-  tire_right: "joint_tire_right"
+# joint_names:
+#   front_left: "joint01_left"
+#   front_right: "joint01_right"
+#   rear_left: "joint04_left"
+#   rear_right: "joint04_right"
+#   tire_left: "joint_tire_left"
+#   tire_right: "joint_tire_right"
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  # Hz
+
+joint01_left_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint01_left
+
+joint01_right_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint01_right
+
+joint04_left_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint04_left
+
+joint04_right_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint04_right
+
+joint_tire_left_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint_tire_left
+
+joint_tire_right_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: joint_tire_right
 
 # 控制输出发布话题
 controller_topic: "/effort_joint_trajectory_controller/command"
