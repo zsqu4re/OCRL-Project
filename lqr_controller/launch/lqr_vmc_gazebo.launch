@@ -42,8 +42,7 @@
   
   <!-- 启动关节控制器 -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
-        args="joint_state_controller effort_joint_trajectory_controller"
-        ns="gazebo_ros_control"/>
+        args="joint_state_controller effort_joint_trajectory_controller" />
   
   <!-- 启动机器人状态发布器 -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
@@ -56,6 +55,10 @@
     <!-- 将控制器设置为发布到Gazebo中的控制器话题 -->
     <param name="controller_topic" value="/effort_joint_trajectory_controller/command" />
   </node>
+
+  
+
+  
   
   <!-- 设置初始期望状态 - 站立平衡位置 -->
   <node name="set_initial_goal" pkg="rostopic" type="rostopic" 

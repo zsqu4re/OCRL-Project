@@ -32,7 +32,12 @@
     <node name="controller_test_real" pkg="lqr_controller" type="test_controller.py" 
           output="screen" unless="$(arg sim)"/>
   </group>
-  
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+      respawn="false" output="screen"
+      args="joint_state_controller 
+      effort_joint_trajectory_controller" />
+
   <!-- RViz可视化 -->
   <!-- <node name="rviz" pkg="rviz" type="rviz" 
         args="-d $(find foc_urdf)/rviz/foc_balance.rviz" if="$(arg gui)"/> -->

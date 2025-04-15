@@ -15,32 +15,20 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50  # Hz
 
-joint01_left_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint01_left
-
-joint01_right_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint01_right
-
-joint04_left_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint04_left
-
-joint04_right_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint04_right
-
-joint_tire_left_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint_tire_left
-
-joint_tire_right_effort_controller:
-  type: effort_controllers/JointEffortController
-  joint: joint_tire_right
+effort_joint_trajectory_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - joint01_left
+    - joint01_right
+    - joint04_left
+    - joint04_right
+    - joint_tire_left
+    - joint_tire_right
 
 # 控制输出发布话题
+# controller_topic: "/joint_state_controller"
 controller_topic: "/effort_joint_trajectory_controller/command"
+
 
 # 安全限制参数
 max_force: 20.0            # 最大力(N)
