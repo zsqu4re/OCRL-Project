@@ -28,10 +28,7 @@
   <!-- 可选：在gazebo中运行时与controllers.yaml集成 -->
   <!-- <arg name="use_gazebo_controllers" default="false" />
   <group if="$(arg use_gazebo_controllers)">
-    <!-- 加载控制器 -->
-    <rosparam file="$(find foc_urdf)/config/controllers.yaml" command="load" ns="gazebo_ros_control"/>
-    
-    <!-- 启动控制器 -->
+
 
   </group> -->
 

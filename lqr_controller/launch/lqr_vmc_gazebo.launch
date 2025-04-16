@@ -29,7 +29,7 @@
   
   <!-- 加载控制器参数 -->
   <rosparam command="load" file="$(find foc_urdf)/config/controllers.yaml" ns="gazebo_ros_control"/>
-  <rosparam command="load" file="$(find lqr_controller)/config/controller_params.yaml" />
+  <!-- <rosparam command="load" file="$(find lqr_controller)/config/controller_params.yaml" /> -->
   
   <!-- 设置日志级别，便于调试 -->
   <env name="ROSCONSOLE_CONFIG_FILE" 

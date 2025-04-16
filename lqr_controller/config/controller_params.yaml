@@ -24,7 +24,13 @@ effort_joint_trajectory_controller:
     - joint04_right
     - joint_tire_left
     - joint_tire_right
-
+  gains:
+    joint01_left: {p: 100.0, i: 0.01, d: 10.0}
+    joint01_right: {p: 100.0, i: 0.01, d: 10.0}
+    joint04_left: {p: 100.0, i: 0.01, d: 10.0}
+    joint04_right: {p: 100.0, i: 0.01, d: 10.0}
+    joint_tire_left: {p: 100.0, i: 0.01, d: 10.0}
+    joint_tire_right: {p: 100.0, i: 0.01, d: 10.0}
 # 控制输出发布话题
 # controller_topic: "/joint_state_controller"
 controller_topic: "/effort_joint_trajectory_controller/command"
