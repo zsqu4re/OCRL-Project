@@ -33,10 +33,11 @@
           output="screen" unless="$(arg sim)"/>
   </group>
 
-  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+  <!-- REMOVE THIS NODE - IT'S ALREADY INCLUDED IN OTHER LAUNCH FILES -->
+  <!-- <node name="controller_spawner" pkg="controller_manager" type="spawner"
       respawn="false" output="screen"
       args="joint_state_controller 
-      effort_joint_trajectory_controller" />
+      effort_joint_trajectory_controller" /> -->
 
   <!-- RViz可视化 -->
   <!-- <node name="rviz" pkg="rviz" type="rviz" 

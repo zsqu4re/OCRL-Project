@@ -20,29 +20,9 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
   // 从参数服务器加载参数
   nh_.param("control_rate", control_rate_, 100.0);  // 默认100Hz
   nh_.param("current_L0", current_L0_, 0.08);      // 默认L0=0.08m
-  nh_.param("controller_topic", controller_topic_, std::string("/effort_joint_trajectory_controller/command"));
+  nh_.param("controller_topic", controller_topic_, std::string("effort_controllers"));
 
-  
-  
-  // 加载关节名称
-  
-  // nh_.param("joint_names/front_left", front_left, std::string("joint01_left"));
-  // nh_.param("joint_names/front_right", front_right, std::string("joint01_right"));
-  // nh_.param("joint_names/rear_left", rear_left, std::string("joint04_left"));
-  // nh_.param("joint_names/rear_right", rear_right, std::string("joint04_right"));
-  // nh_.param("joint_names/tire_left", tire_left, std::string("joint_tire_left"));
-  // nh_.param("joint_names/tire_right", tire_right, std::string("joint_tire_right"));
-
-  // 存储关节名称
-  // joint_names_["front_left"] = front_left;
-  // joint_names_["front_right"] = front_right;
-  // joint_names_["rear_left"] = rear_left;
-  // joint_names_["rear_right"] = rear_right;
-  // joint_names_["tire_left"] = tire_left;
-  // joint_names_["tire_right"] = tire_right;
-
-
-  // Instead of retrieving remapped names via parameters, we directly use the URDF joint names.
+  // Store joint names in the map using the URDF names as keys.
   const std::string joint01_left = "joint01_left";
   const std::string joint01_right = "joint01_right";
   const std::string joint04_left = "joint04_left";
@@ -50,7 +30,6 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
   const std::string joint_tire_left = "joint_tire_left";
   const std::string joint_tire_right = "joint_tire_right";
 
-  // Store joint names in the map using the URDF names as keys.
   joint_names_["joint01_left"] = joint01_left;
   joint_names_["joint01_right"] = joint01_right;
   joint_names_["joint04_left"] = joint04_left;
@@ -62,7 +41,14 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
   // 设置发布器和订阅器
   joint_state_sub_ = nh_.subscribe("/joint_states", 10, 
                                   &LQRController::jointStateCallback, this);
-  joint_cmd_pub_ = nh_.advertise<std_msgs::Float64MultiArray>(controller_topic_, 10);
+  
+  // Replace the single publisher with individual publishers for each joint
+  joint01_left_pub_ = nh_.advertise<std_msgs::Float64>("/joint01_left_effort_controller/command", 10);
+  joint01_right_pub_ = nh_.advertise<std_msgs::Float64>("/joint01_right_effort_controller/command", 10);
+  joint04_left_pub_ = nh_.advertise<std_msgs::Float64>("/joint04_left_effort_controller/command", 10);
+  joint04_right_pub_ = nh_.advertise<std_msgs::Float64>("/joint04_right_effort_controller/command", 10);
+  joint_tire_left_pub_ = nh_.advertise<std_msgs::Float64>("/joint_tire_left_effort_controller/command", 10);
+  joint_tire_right_pub_ = nh_.advertise<std_msgs::Float64>("/joint_tire_right_effort_controller/command", 10);
   
   // 添加目标状态订阅者
   desired_state_sub_ = nh_.subscribe("/desired_state", 10,
@@ -85,7 +71,7 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
   ROS_INFO("Using joints: %s, %s, %s, %s", 
             joint_names_["joint01_left"].c_str(), joint_names_["joint01_right"].c_str(),
             joint_names_["joint04_left"].c_str(), joint_names_["joint04_right"].c_str());
-  ROS_INFO("发布控制到话题: %s", controller_topic_.c_str());
+  ROS_INFO("send controll topic to: %s", controller_topic_.c_str());
 }
 
 int LQRController::findJointIndex(const std::vector<std::string>& joint_names, const std::string& target_joint) {
@@ -174,7 +160,7 @@ void LQRController::updateRobotState(const sensor_msgs::JointState::ConstPtr& ms
     // 标记状态已初始化
     state_initialized_ = true;
     
-    ROS_DEBUG("更新状态: l0=%.3f, phi0=%.3f, dl0=%.3f, dphi0=%.3f", 
+    ROS_DEBUG("update state: l0=%.3f, phi0=%.3f, dl0=%.3f, dphi0=%.3f", 
               l0_, phi0_, dl0_, dphi0_);
   }
   catch (const std::exception& e) {
@@ -200,24 +186,24 @@ void LQRController::desiredStateCallback(const std_msgs::Float64MultiArray::Cons
 }
 
 void LQRController::controlLoop(const ros::TimerEvent& event) {
-  // 如果状态尚未初始化，则跳过此周期
+  // If state is not yet initialized, skip this cycle
   if (!state_initialized_) {
     ROS_WARN_THROTTLE(1.0, "Waiting for joint state initialization...");
     return;
   }
   
-  // 计算状态偏差
+  // Calculate state error
   Eigen::VectorXd state_error = current_state_ - desired_state_;
   
-  // 根据当前L0值计算K矩阵
+  // Calculate K matrix based on current L0 value
   Eigen::MatrixXd K = calculateK(current_L0_);
   
-  // 计算LQR控制力和力矩 u = -K * state_error
+  // Calculate LQR control force and torque u = -K * state_error
   Eigen::VectorXd u = -K * state_error;
-  double F = u(0);  // 力
-  double Tp = u(1); // 扭矩
+  double F = u(0);  // Force
+  double Tp = u(1); // Torque
   
-  // 限制最大力和力矩，避免不稳定
+  // Limit maximum force and torque to avoid instability
   double max_force, max_torque, max_motor_torque;
   nh_.param("max_force", max_force, 20.0);
   nh_.param("max_torque", max_torque, 5.0);
@@ -225,26 +211,26 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
   
   if (std::abs(F) > max_force) {
     F = F > 0 ? max_force : -max_force;
-    ROS_WARN_THROTTLE(1.0, "力被限制为 %.3f", F);
+    ROS_WARN_THROTTLE(1.0, "Force limited to %.3f", F);
   }
   
   if (std::abs(Tp) > max_torque) {
     Tp = Tp > 0 ? max_torque : -max_torque;
-    ROS_WARN_THROTTLE(1.0, "力矩被限制为 %.3f", Tp);
+    ROS_WARN_THROTTLE(1.0, "Torque limited to %.3f", Tp);
   }
   
-  // 使用VMC将力和力矩转换为关节力矩
+  // Use VMC to convert force and torque to joint torques
   Eigen::Vector2d motor_torques;
   try {
     motor_torques = vmc_.convertToMotorTorques(F, Tp, phi1_, phi4_);
     
-    // 检查计算结果是否有效
+    // Check if calculation results are valid
     if (std::isnan(motor_torques(0)) || std::isnan(motor_torques(1))) {
-      ROS_WARN("VMC NAN, zero torques");
+      ROS_WARN("VMC returned NaN, using zero torques");
       motor_torques << 0.0, 0.0;
     }
     
-    // 限制电机力矩大小
+    // Limit motor torque magnitude
     if (std::abs(motor_torques(0)) > max_motor_torque) {
       motor_torques(0) = motor_torques(0) > 0 ? max_motor_torque : -max_motor_torque;
     }
@@ -255,45 +241,41 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
   }
   catch (const std::exception& e) {
     ROS_ERROR("VMC error: %s", e.what());
-    motor_torques << 0.0, 0.0;  // 出错时使用零力矩
+    motor_torques << 0.0, 0.0;  // Use zero torque on error
   }
   
-  // 发布控制命令到effort_joint_trajectory_controller
-  std_msgs::Float64MultiArray cmd_msg;
   
-  // 填充消息头以符合trajectory_msgs/JointTrajectoryPoint格式
-  cmd_msg.layout.dim.resize(1);
-  cmd_msg.layout.dim[0].label = "joints";
-  cmd_msg.layout.dim[0].size = 6;  // 对应controllers.yaml中定义的6个关节
-  cmd_msg.layout.dim[0].stride = 6;
-  cmd_msg.layout.data_offset = 0;
-  
-  // 为所有控制器中声明的关节设置力矩值
-  cmd_msg.data.resize(6, 0.0);  // 初始化为全零
-  
+  // 发布控制命令到各个关节的effort controller
+  std_msgs::Float64 cmd;
+    
   // 给前腿马达设置力矩
-  cmd_msg.data[0] = motor_torques(0);  // joint01_left
-  cmd_msg.data[1] = motor_torques(1);  // joint01_right
-  
+  cmd.data = motor_torques(0);
+  joint01_left_pub_.publish(cmd);
+
+  cmd.data = motor_torques(1);
+  joint01_right_pub_.publish(cmd);
+
   // 给后腿马达设置相同的力矩，以保持平衡
-  cmd_msg.data[2] = motor_torques(0);  // joint04_left
-  cmd_msg.data[3] = motor_torques(1);  // joint04_right
-  
+  cmd.data = motor_torques(0);
+  joint04_left_pub_.publish(cmd);
+
+  cmd.data = motor_torques(1);
+  joint04_right_pub_.publish(cmd);
+
   // 轮胎关节不施加扭矩
-  cmd_msg.data[4] = 0.0;  // joint_tire_left
-  cmd_msg.data[5] = 0.0;  // joint_tire_right
-  
-  joint_cmd_pub_.publish(cmd_msg);
+  cmd.data = 0.0;
+  joint_tire_left_pub_.publish(cmd);
+  joint_tire_right_pub_.publish(cmd);
   
   // 添加调试日志，便于观察控制器工作状态
-  ROS_DEBUG("Curretn State: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
-           current_state_(0), current_state_(1), current_state_(2),
-           current_state_(3), current_state_(4), current_state_(5));
+  ROS_DEBUG("Current State: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+    current_state_(0), current_state_(1), current_state_(2),
+    current_state_(3), current_state_(4), current_state_(5));
   ROS_DEBUG("Goal state: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
-           desired_state_(0), desired_state_(1), desired_state_(2),
-           desired_state_(3), desired_state_(4), desired_state_(5));
-  ROS_DEBUG("LQR control output: F=%.3f, Tp=%.3f", F, Tp);
-  ROS_DEBUG("VMC motor output: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
+      desired_state_(0), desired_state_(1), desired_state_(2),
+      desired_state_(3), desired_state_(4), desired_state_(5));
+  ROS_DEBUG("LQR output: F=%.3f, Tp=%.3f", F, Tp);
+  ROS_DEBUG("Motor torques: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
 }
 
 Eigen::MatrixXd LQRController::calculateK(double L0) {

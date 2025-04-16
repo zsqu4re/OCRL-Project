@@ -5,6 +5,7 @@
 #include <ros/ros.h>
 #include <sensor_msgs/JointState.h>
 #include <std_msgs/Float64MultiArray.h>
+#include <std_msgs/Float64.h>     // Add this include for Float64 message
 #include <Eigen/Dense>
 #include <map>
 #include <string>
@@ -37,8 +38,16 @@ private:
   // ROS接口
   ros::NodeHandle nh_;
   ros::Subscriber joint_state_sub_;
-  ros::Subscriber desired_state_sub_;  // 新增
-  ros::Publisher joint_cmd_pub_;
+  ros::Subscriber desired_state_sub_;
+  
+  // Replace the single publisher with individual publishers for each joint
+  ros::Publisher joint01_left_pub_;
+  ros::Publisher joint01_right_pub_;
+  ros::Publisher joint04_left_pub_;
+  ros::Publisher joint04_right_pub_;
+  ros::Publisher joint_tire_left_pub_;
+  ros::Publisher joint_tire_right_pub_;
+  
   ros::Timer control_timer_;
   
   // VMC接口

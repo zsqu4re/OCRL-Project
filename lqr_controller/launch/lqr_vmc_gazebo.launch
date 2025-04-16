@@ -28,6 +28,7 @@
         args="0 0 0 0 0 0 base_link base_footprint 40" />
   
   <!-- 加载控制器参数 -->
+  <rosparam command="load" file="$(find foc_urdf)/config/controllers.yaml"/>
   <rosparam command="load" file="$(find foc_urdf)/config/controllers.yaml" ns="gazebo_ros_control"/>
   <rosparam command="load" file="$(find lqr_controller)/config/controller_params.yaml" />
   
@@ -41,8 +42,15 @@
               -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos)" output="screen" />
   
   <!-- 启动关节控制器 -->
+  <!-- 启动关节控制器 -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
-        args="joint_state_controller effort_joint_trajectory_controller" />
+        args="joint_state_controller 
+              joint01_left_effort_controller
+              joint01_right_effort_controller
+              joint04_left_effort_controller
+              joint04_right_effort_controller
+              joint_tire_left_effort_controller
+              joint_tire_right_effort_controller" />
   
   <!-- 启动机器人状态发布器 -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"

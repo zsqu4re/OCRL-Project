@@ -1,53 +1,28 @@
-# LQR控制器参数
-control_rate: 100.0        # 控制频率(Hz)
-current_L0: 0.08           # 默认腿长度(m)
+# LQR controller parameters
+control_rate: 100.0        # Control frequency(Hz)
+current_L0: 0.08           # Default leg length(m)
 
-# 机器人关节配置
-# joint_names:
-#   front_left: "joint01_left"
-#   front_right: "joint01_right"
-#   rear_left: "joint04_left"
-#   rear_right: "joint04_right"
-#   tire_left: "joint_tire_left"
-#   tire_right: "joint_tire_right"
-
-joint_state_controller:
-  type: joint_state_controller/JointStateController
-  publish_rate: 50  # Hz
-
-effort_joint_trajectory_controller:
-  type: effort_controllers/JointTrajectoryController
-  joints:
-    - joint01_left
-    - joint01_right
-    - joint04_left
-    - joint04_right
-    - joint_tire_left
-    - joint_tire_right
-
-# 控制输出发布话题
-# controller_topic: "/joint_state_controller"
+# Robot joint configuration
 controller_topic: "/effort_joint_trajectory_controller/command"
 
+# Safety limits
+max_force: 20.0            # Maximum force(N)
+max_torque: 5.0            # Maximum torque(Nm)
+max_motor_torque: 10.0     # Maximum motor torque(Nm)
 
-# 安全限制参数
-max_force: 20.0            # 最大力(N)
-max_torque: 5.0            # 最大力矩(Nm)
-max_motor_torque: 10.0     # 最大电机力矩(Nm)
-
-# VMC参数
+# VMC parameters
 vmc:
-  l1: 0.05                 # 连杆1长度(m)
-  l2: 0.105                # 连杆2长度(m)
-  l3: 0.105                # 连杆3长度(m)
-  l4: 0.05                 # 连杆4长度(m)
-  L: 0.06                  # 底盘长度(m)
+  l1: 0.05                 # Link 1 length(m)
+  l2: 0.105                # Link 2 length(m)
+  l3: 0.105                # Link 3 length(m)
+  l4: 0.05                 # Link 4 length(m)
+  L: 0.06                  # Chassis length(m)
 
-# 状态初始化
+# State initialization
 default_state:
-  theta: 0.0               # 腿角度(rad)
-  theta_dot: 0.0           # 腿角速度(rad/s)
-  l0: 0.08                 # 腿长度(m)
-  l0_dot: 0.0              # 腿长度变化率(m/s)
-  phi: 0.0                 # 机身姿态角(rad)
-  phi_dot: 0.0             # 机身姿态角速度(rad/s)
+  theta: 0.0               # Leg angle(rad)
+  theta_dot: 0.0           # Leg angular velocity(rad/s)
+  l0: 0.08                 # Leg length(m)
+  l0_dot: 0.0              # Leg length change rate(m/s)
+  phi: 0.0                 # Body attitude angle(rad)
+  phi_dot: 0.0             # Body attitude angular velocity(rad/s)
