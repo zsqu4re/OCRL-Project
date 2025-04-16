@@ -2,7 +2,7 @@
 #include "lqr_controller/lqr_controller.h"
 #include <ros/ros.h>
 
-LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_initialized_(false) {
+LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_initialized_(true) {
   // 初始化状态向量
   current_state_ = Eigen::VectorXd::Zero(6);
   desired_state_ = Eigen::VectorXd::Zero(6);
@@ -21,23 +21,43 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
   nh_.param("control_rate", control_rate_, 100.0);  // 默认100Hz
   nh_.param("current_L0", current_L0_, 0.08);      // 默认L0=0.08m
   nh_.param("controller_topic", controller_topic_, std::string("/effort_joint_trajectory_controller/command"));
+
+  
   
   // 加载关节名称
-  std::string front_left, front_right, rear_left, rear_right, tire_left, tire_right;
-  nh_.param("joint_names/front_left", front_left, std::string("joint01_left"));
-  nh_.param("joint_names/front_right", front_right, std::string("joint01_right"));
-  nh_.param("joint_names/rear_left", rear_left, std::string("joint04_left"));
-  nh_.param("joint_names/rear_right", rear_right, std::string("joint04_right"));
-  nh_.param("joint_names/tire_left", tire_left, std::string("joint_tire_left"));
-  nh_.param("joint_names/tire_right", tire_right, std::string("joint_tire_right"));
   
+  // nh_.param("joint_names/front_left", front_left, std::string("joint01_left"));
+  // nh_.param("joint_names/front_right", front_right, std::string("joint01_right"));
+  // nh_.param("joint_names/rear_left", rear_left, std::string("joint04_left"));
+  // nh_.param("joint_names/rear_right", rear_right, std::string("joint04_right"));
+  // nh_.param("joint_names/tire_left", tire_left, std::string("joint_tire_left"));
+  // nh_.param("joint_names/tire_right", tire_right, std::string("joint_tire_right"));
+
   // 存储关节名称
-  joint_names_["front_left"] = front_left;
-  joint_names_["front_right"] = front_right;
-  joint_names_["rear_left"] = rear_left;
-  joint_names_["rear_right"] = rear_right;
-  joint_names_["tire_left"] = tire_left;
-  joint_names_["tire_right"] = tire_right;
+  // joint_names_["front_left"] = front_left;
+  // joint_names_["front_right"] = front_right;
+  // joint_names_["rear_left"] = rear_left;
+  // joint_names_["rear_right"] = rear_right;
+  // joint_names_["tire_left"] = tire_left;
+  // joint_names_["tire_right"] = tire_right;
+
+
+  // Instead of retrieving remapped names via parameters, we directly use the URDF joint names.
+  const std::string joint01_left = "joint01_left";
+  const std::string joint01_right = "joint01_right";
+  const std::string joint04_left = "joint04_left";
+  const std::string joint04_right = "joint04_right";
+  const std::string joint_tire_left = "joint_tire_left";
+  const std::string joint_tire_right = "joint_tire_right";
+
+  // Store joint names in the map using the URDF names as keys.
+  joint_names_["joint01_left"] = joint01_left;
+  joint_names_["joint01_right"] = joint01_right;
+  joint_names_["joint04_left"] = joint04_left;
+  joint_names_["joint04_right"] = joint04_right;
+  joint_names_["joint_tire_left"] = joint_tire_left;
+  joint_names_["joint_tire_right"] = joint_tire_right;
+
   
   // 设置发布器和订阅器
   joint_state_sub_ = nh_.subscribe("/joint_states", 10, 
@@ -62,9 +82,9 @@ LQRController::LQRController(ros::NodeHandle& nh) : nh_(nh), vmc_(nh), state_ini
                                   
   ROS_INFO("LQR controller with VMC integration initialized with L0 = %.3f, control rate = %.1f Hz", 
            current_L0_, control_rate_);
-  ROS_INFO("使用关节: front_left=%s, front_right=%s, rear_left=%s, rear_right=%s", 
-           joint_names_["front_left"].c_str(), joint_names_["front_right"].c_str(),
-           joint_names_["rear_left"].c_str(), joint_names_["rear_right"].c_str());
+  ROS_INFO("Using joints: %s, %s, %s, %s", 
+            joint_names_["joint01_left"].c_str(), joint_names_["joint01_right"].c_str(),
+            joint_names_["joint04_left"].c_str(), joint_names_["joint04_right"].c_str());
   ROS_INFO("发布控制到话题: %s", controller_topic_.c_str());
 }
 
@@ -84,40 +104,45 @@ void LQRController::jointStateCallback(const sensor_msgs::JointState::ConstPtr& 
 
 void LQRController::updateRobotState(const sensor_msgs::JointState::ConstPtr& msg) {
   // 查找必要的关节索引
-  int front_left_idx = findJointIndex(msg->name, joint_names_["front_left"]);
-  int front_right_idx = findJointIndex(msg->name, joint_names_["front_right"]);
-  int rear_left_idx = findJointIndex(msg->name, joint_names_["rear_left"]);
-  int rear_right_idx = findJointIndex(msg->name, joint_names_["rear_right"]);
+  // int front_left_idx = findJointIndex(msg->name, joint_names_["front_left"]);
+  // int front_right_idx = findJointIndex(msg->name, joint_names_["front_right"]);
+  // int rear_left_idx = findJointIndex(msg->name, joint_names_["rear_left"]);
+  // int rear_right_idx = findJointIndex(msg->name, joint_names_["rear_right"]);
+  int joint01_left_idx = findJointIndex(msg->name, joint_names_["joint01_left"]);
+  int joint01_right_idx = findJointIndex(msg->name, joint_names_["joint01_right"]);
+  int joint04_left_idx = findJointIndex(msg->name, joint_names_["joint04_left"]);
+  int joint04_right_idx = findJointIndex(msg->name, joint_names_["joint04_right"]);
+
   
   // 检查是否找到了所有必要的关节
-  if (front_left_idx < 0 || front_right_idx < 0) {
+  if (joint01_left_idx < 0 || joint04_left_idx < 0) {
     ROS_WARN_THROTTLE(1.0, "Could not find joints %s or %s", 
-                    joint_names_["front_left"].c_str(), joint_names_["front_right"].c_str());
+                    joint_names_["joint01_left"].c_str(), joint_names_["joint04_right"].c_str());
     return;
   }
-  
+
   // 如果找不到后腿电机关节，使用前腿电机关节代替（简化实现）
-  if (rear_left_idx < 0 && rear_right_idx < 0) {
-    ROS_WARN_THROTTLE(1.0, "Could not find joints %s or %s, using front joints values", 
-                    joint_names_["rear_left"].c_str(), joint_names_["rear_right"].c_str());
-    rear_left_idx = front_left_idx;
-    rear_right_idx = front_right_idx;
-  }
+  // if (joint04_left_idx < 0 && joint01_right_idx < 0) {
+  //   ROS_WARN_THROTTLE(1.0, "Could not find joints %s or %s, using front joints values", 
+  //                   joint_names_["joint04_left"].c_str(), joint_names_["joint01_right"].c_str());
+  //   joint04_left_idx = joint01_left_idx;
+  //   joint01_right_idx = joint01_right_idx;
+  // }
   
   // 检查关节状态数据有效性
-  if (front_left_idx >= static_cast<int>(msg->position.size()) || 
-      front_right_idx >= static_cast<int>(msg->position.size()) ||
-      front_left_idx >= static_cast<int>(msg->velocity.size()) || 
-      front_right_idx >= static_cast<int>(msg->velocity.size())) {
+  if (joint01_left_idx >= static_cast<int>(msg->position.size()) || 
+      joint04_left_idx >= static_cast<int>(msg->position.size()) ||
+      joint01_left_idx >= static_cast<int>(msg->velocity.size()) || 
+      joint04_left_idx >= static_cast<int>(msg->velocity.size())) {
     ROS_WARN_THROTTLE(1.0, "Joint state message does not contain required position/velocity data");
     return;
   }
   
   // 更新关节角度和速度（我们用左右前腿作为虚拟模型控制的输入）
-  phi1_ = msg->position[front_left_idx];
-  phi4_ = msg->position[front_right_idx];
-  dphi1_ = msg->velocity[front_left_idx];
-  dphi4_ = msg->velocity[front_right_idx];
+  phi1_ = msg->position[joint01_left_idx];
+  phi4_ = msg->position[joint04_left_idx];
+  dphi1_ = msg->velocity[joint01_left_idx];
+  dphi4_ = msg->velocity[joint04_left_idx];
   
   // 使用VMC接口计算腿部状态
   try {
@@ -166,18 +191,18 @@ void LQRController::desiredStateCallback(const std_msgs::Float64MultiArray::Cons
     desired_state_(4) = msg->data[4];  // phi（机身姿态角）
     desired_state_(5) = msg->data[5];  // phi_dot（机身姿态角速度）
     
-    ROS_INFO("收到新的目标状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+    ROS_INFO("New goal state: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
              msg->data[0], msg->data[1], msg->data[2],
              msg->data[3], msg->data[4], msg->data[5]);
   } else {
-    ROS_WARN("收到的目标状态数组长度不足 (%zu < 6)", msg->data.size());
+    ROS_WARN("length not enough (%zu < 6)", msg->data.size());
   }
 }
 
 void LQRController::controlLoop(const ros::TimerEvent& event) {
   // 如果状态尚未初始化，则跳过此周期
   if (!state_initialized_) {
-    ROS_WARN_THROTTLE(1.0, "等待状态初始化");
+    ROS_WARN_THROTTLE(1.0, "Waiting for joint state initialization...");
     return;
   }
   
@@ -215,7 +240,7 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
     
     // 检查计算结果是否有效
     if (std::isnan(motor_torques(0)) || std::isnan(motor_torques(1))) {
-      ROS_WARN("VMC转换产生了NaN值，使用零力矩");
+      ROS_WARN("VMC NAN, zero torques");
       motor_torques << 0.0, 0.0;
     }
     
@@ -229,7 +254,7 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
     }
   }
   catch (const std::exception& e) {
-    ROS_ERROR("VMC转换异常: %s", e.what());
+    ROS_ERROR("VMC error: %s", e.what());
     motor_torques << 0.0, 0.0;  // 出错时使用零力矩
   }
   
@@ -261,14 +286,14 @@ void LQRController::controlLoop(const ros::TimerEvent& event) {
   joint_cmd_pub_.publish(cmd_msg);
   
   // 添加调试日志，便于观察控制器工作状态
-  ROS_DEBUG("当前状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+  ROS_DEBUG("Curretn State: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
            current_state_(0), current_state_(1), current_state_(2),
            current_state_(3), current_state_(4), current_state_(5));
-  ROS_DEBUG("目标状态: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
+  ROS_DEBUG("Goal state: [theta=%.3f, dtheta=%.3f, l0=%.3f, dl0=%.3f, phi=%.3f, dphi=%.3f]", 
            desired_state_(0), desired_state_(1), desired_state_(2),
            desired_state_(3), desired_state_(4), desired_state_(5));
-  ROS_DEBUG("LQR控制输出: F=%.3f, Tp=%.3f", F, Tp);
-  ROS_DEBUG("VMC转换后电机扭矩: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
+  ROS_DEBUG("LQR control output: F=%.3f, Tp=%.3f", F, Tp);
+  ROS_DEBUG("VMC motor output: T1=%.3f, T2=%.3f", motor_torques(0), motor_torques(1));
 }
 
 Eigen::MatrixXd LQRController::calculateK(double L0) {
