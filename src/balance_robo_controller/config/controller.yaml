@@ -22,28 +22,28 @@ balance_robot_controller:
   # 控制器参数
   gains:
     # Yaw控制器（航向）
-    yaw_p: 10.0
+    yaw_p: 0.0
     yaw_i: 0.0
     yaw_d: 0.0
     yaw_max_i: 0.0
     yaw_max_out: 2.0
     
     # Roll控制器（侧倾）
-    roll_p: 20.0
+    roll_p: 0.0
     roll_i: 0.0
     roll_d: 0.0
     roll_max_i: 0.0
     roll_max_out: 3.0
     
     # 腿部长度控制器
-    leg_length_p: 5.0
+    leg_length_p: 500.0
     leg_length_i: 0.0
     leg_length_d: 0.0
     leg_length_max_i: 0.0
     leg_length_max_out: 0.5
     
     # 腿部角度控制器
-    leg_angle_p: 12.0
+    leg_angle_p: 500.0
     leg_angle_i: 0.0
     leg_angle_d: 0.0
     leg_angle_max_i: 0.0

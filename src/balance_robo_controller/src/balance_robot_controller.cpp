@@ -533,12 +533,18 @@ private:
     float leftTp = lqrOutTp * lqrTpRatio - legAnglePID.output * (leftLegPos.length / 0.07f);
     float rightTp = lqrOutTp * lqrTpRatio + legAnglePID.output * (rightLegPos.length / 0.07f);
     
-    // 使用VMC计算各关节电机输出扭矩
+    //使用VMC计算各关节电机输出扭矩
     float leftJointTorque[2] = {0};
     leg_conv(leftForce, leftTp, leftJoint[1].angle, leftJoint[0].angle, leftJointTorque);
     
     float rightJointTorque[2] = {0};
     leg_conv(rightForce, rightTp, rightJoint[1].angle, rightJoint[0].angle, rightJointTorque);
+
+    // float leftJointTorque[2] = {0};
+    // leg_conv(leftForce, leftTp, leftJoint[1].angle, leftJoint[0].angle, leftJointTorque);
+    
+    // float rightJointTorque[2] = {0};
+    // leg_conv(rightForce, rightTp, rightJoint[1].angle, rightJoint[0].angle, rightJointTorque);
     
     // 保护腿部角度不超限
     float leftTheta = leftLegPos.angle - imuData.pitch - M_PI_2;
@@ -548,35 +554,49 @@ private:
                           rightTheta < -M_PI_4 || rightTheta > M_PI_4 ||
                           imuData.pitch > M_PI_4 || imuData.pitch < -M_PI_4);
     
-    if(angleExceeded)
-    {
-      // 角度超限，关闭所有电机
-      leftWheelTorque = 0;
-      rightWheelTorque = 0;
-      leftJointTorque[0] = 0;
-      leftJointTorque[1] = 0;
-      rightJointTorque[0] = 0;
-      rightJointTorque[1] = 0;
-    }
+    // if(angleExceeded)
+    // {
+    //   // 角度超限，关闭所有电机
+    //   leftWheelTorque = 0;
+    //   rightWheelTorque = 0;
+    //   leftJointTorque[0] = 0;
+    //   leftJointTorque[1] = 0;
+    //   rightJointTorque[0] = 0;
+    //   rightJointTorque[1] = 0;
+    // }
     
     // 设置关节电机输出
+    // joints_[0].setCommand(-leftJointTorque[0]);    // joint01_left，轴向为-1，负号正确
+    // joints_[1].setCommand(rightJointTorque[1]);    // joint01_right，轴向为1，应去掉负号
+    // joints_[2].setCommand(-leftJointTorque[1]);    // joint04_left，轴向为-1，负号正确
+    // joints_[3].setCommand(rightJointTorque[0]);    // joint04_right，轴向为1，应去掉负号
+    // joints_[4].setCommand(leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
+    // joints_[5].setCommand(rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
+
     joints_[0].setCommand(-leftJointTorque[0]);    // joint01_left，轴向为-1，负号正确
-    joints_[1].setCommand(rightJointTorque[1]);    // joint01_right，轴向为1，应去掉负号
+    joints_[1].setCommand(rightJointTorque[0]);    // joint01_right，轴向为1，应去掉负号
     joints_[2].setCommand(-leftJointTorque[1]);    // joint04_left，轴向为-1，负号正确
-    joints_[3].setCommand(rightJointTorque[0]);    // joint04_right，轴向为1，应去掉负号
-    joints_[4].setCommand(leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
-    joints_[5].setCommand(-rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
+    joints_[3].setCommand(rightJointTorque[1]);    // joint04_right，轴向为1，应去掉负号
+    joints_[4].setCommand(-leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
+    joints_[5].setCommand(rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
 
 
     std_msgs::Float32MultiArray cmd_msg;
     cmd_msg.data.resize(6);
 
-    cmd_msg.data[0] = -leftJointTorque[0];    // joint01_left
-    cmd_msg.data[1] = rightJointTorque[1];    // joint01_right
-    cmd_msg.data[2] = -leftJointTorque[1];    // joint04_left
-    cmd_msg.data[3] = rightJointTorque[0];    // joint04_right
+    // cmd_msg.data[0] = -leftJointTorque[0];    // joint01_left
+    // cmd_msg.data[1] = rightJointTorque[1];    // joint01_right
+    // cmd_msg.data[2] = -leftJointTorque[1];    // joint04_left
+    // cmd_msg.data[3] = rightJointTorque[0];    // joint04_right
+    // cmd_msg.data[4] = leftWheelTorque;        // joint_tire_left
+    // cmd_msg.data[5] = -rightWheelTorque;      // joint_tire_right
+
+    cmd_msg.data[0] = leftJointTorque[0];    // joint01_left
+    cmd_msg.data[1] = rightJointTorque[0];    // joint01_right
+    cmd_msg.data[2] = leftJointTorque[1];    // joint04_left
+    cmd_msg.data[3] = rightJointTorque[1];    // joint04_right
     cmd_msg.data[4] = leftWheelTorque;        // joint_tire_left
-    cmd_msg.data[5] = -rightWheelTorque;      // joint_tire_right
+    cmd_msg.data[5] = rightWheelTorque;      // joint_tire_right
   
     joint_cmd_pub_.publish(cmd_msg);
   }
