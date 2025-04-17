@@ -33,3 +33,6 @@ rostopic echo /imu/data
 ~~1. Read the IMU date of the robot~~
 2. Read the data from gazebo for control input
 3. LQR controller...
+
+sudo apt install ros-noetic-effort-controllers
+sudo apt install ros-noetic-joint-trajectory-controller
