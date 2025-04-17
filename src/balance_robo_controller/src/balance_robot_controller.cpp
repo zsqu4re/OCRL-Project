@@ -16,6 +16,10 @@
 #include "lqr_k.h"
 #include "pid.h"  // 导入单独的PID头文件
 
+// #include <pluginlib/class_list_macros.h>
+// PLUGINLIB_EXPORT_CLASS(balance_robot_controller::BalanceRobotController, controller_interface::ControllerBase)
+
+
 // 腿部姿态结构体
 struct LegPos
 {
@@ -64,6 +68,8 @@ private:
   ros::Subscriber imu_sub_;
   ros::Subscriber cmd_vel_sub_;
   ros::Publisher state_pub_;
+  ros::Publisher joint_cmd_pub_;
+
   
   // IMU数据
   struct {
@@ -135,11 +141,15 @@ public:
       }
     }
     
+    joint_cmd_pub_ = nh.advertise<std_msgs::Float32MultiArray>("/balance_robot/joint_cmd", 1);
+
     // 初始化电机参数
     Motor_InitAll();
     
     // 初始化控制器
     Ctrl_Init();
+
+
     
     // 初始化目标值
     target.rollAngle = 0.0f;
@@ -556,6 +566,19 @@ private:
     joints_[3].setCommand(rightJointTorque[0]);    // joint04_right，轴向为1，应去掉负号
     joints_[4].setCommand(leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
     joints_[5].setCommand(-rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
+
+
+    std_msgs::Float32MultiArray cmd_msg;
+    cmd_msg.data.resize(6);
+
+    cmd_msg.data[0] = -leftJointTorque[0];    // joint01_left
+    cmd_msg.data[1] = rightJointTorque[1];    // joint01_right
+    cmd_msg.data[2] = -leftJointTorque[1];    // joint04_left
+    cmd_msg.data[3] = rightJointTorque[0];    // joint04_right
+    cmd_msg.data[4] = leftWheelTorque;        // joint_tire_left
+    cmd_msg.data[5] = -rightWheelTorque;      // joint_tire_right
+  
+    joint_cmd_pub_.publish(cmd_msg);
   }
 
   // 发布状态数据
@@ -579,8 +602,9 @@ private:
     state_msg.data[12] = target.yawAngle;
     state_msg.data[13] = groundDetector.leftSupportForce;
     state_msg.data[14] = groundDetector.rightSupportForce;
-    
+
     state_pub_.publish(state_msg);
+
   }
 };
 }

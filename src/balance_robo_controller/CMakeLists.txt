@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
 )
 
+
 ## 声明catkin包
 catkin_package(
   INCLUDE_DIRS include
@@ -62,3 +63,5 @@ install(DIRECTORY include/${PROJECT_NAME}/
 install(FILES balance_robot_controller_plugin.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+
