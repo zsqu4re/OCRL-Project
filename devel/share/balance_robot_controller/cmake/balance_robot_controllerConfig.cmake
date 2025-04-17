@@ -67,14 +67,14 @@ set(balance_robot_controller_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(balance_robot_controller_SOURCE_PREFIX /home/hao/balance_robot_ws/src/balance_robo_controller)
-  set(balance_robot_controller_DEVEL_PREFIX /home/hao/balance_robot_ws/devel)
+  set(balance_robot_controller_SOURCE_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller)
+  set(balance_robot_controller_DEVEL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel)
   set(balance_robot_controller_INSTALL_PREFIX "")
   set(balance_robot_controller_PREFIX ${balance_robot_controller_DEVEL_PREFIX})
 else()
   set(balance_robot_controller_SOURCE_PREFIX "")
   set(balance_robot_controller_DEVEL_PREFIX "")
-  set(balance_robot_controller_INSTALL_PREFIX /home/hao/balance_robot_ws/install)
+  set(balance_robot_controller_INSTALL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install)
   set(balance_robot_controller_PREFIX ${balance_robot_controller_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(balance_robot_controller_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/hao/balance_robot_ws/src/balance_robo_controller/include " STREQUAL " ")
+if(NOT "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/include " STREQUAL " ")
   set(balance_robot_controller_INCLUDE_DIRS "")
-  set(_include_dirs "/home/hao/balance_robot_ws/src/balance_robo_controller/include")
+  set(_include_dirs "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/hao/balance_robot_ws/src/balance_robo_controller/include " STREQUA
         message(FATAL_ERROR "Project 'balance_robot_controller' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'balance_robot_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/hao/balance_robot_ws/src/balance_robo_controller/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'balance_robot_controller' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/${idir}'.  ${_report}")
     endif()
     _list_append_unique(balance_robot_controller_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/hao/balance_robot_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

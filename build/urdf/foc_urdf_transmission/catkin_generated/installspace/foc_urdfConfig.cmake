@@ -67,14 +67,14 @@ set(foc_urdf_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(foc_urdf_SOURCE_PREFIX /home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission)
-  set(foc_urdf_DEVEL_PREFIX /home/hao/balance_robot_ws/devel)
+  set(foc_urdf_SOURCE_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission)
+  set(foc_urdf_DEVEL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel)
   set(foc_urdf_INSTALL_PREFIX "")
   set(foc_urdf_PREFIX ${foc_urdf_DEVEL_PREFIX})
 else()
   set(foc_urdf_SOURCE_PREFIX "")
   set(foc_urdf_DEVEL_PREFIX "")
-  set(foc_urdf_INSTALL_PREFIX /home/hao/balance_robot_ws/install)
+  set(foc_urdf_INSTALL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install)
   set(foc_urdf_PREFIX ${foc_urdf_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/hao/balance_robot_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

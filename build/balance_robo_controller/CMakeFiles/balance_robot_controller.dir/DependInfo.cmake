@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/balance_robot_controller.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o"
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_conv.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o"
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_pos.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o"
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_spd.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o"
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/lqr_k.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o"
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/src/pid.cpp" "/home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/balance_robot_controller.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_conv.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_pos.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_spd.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/lqr_k.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/pid.cpp" "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,7 +23,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/hao/balance_robot_ws/src/balance_robo_controller/include"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

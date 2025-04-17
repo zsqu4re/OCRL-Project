@@ -1,8 +1,8 @@
-# Install script for directory: /home/hao/balance_robot_ws/src/balance_robo_controller
+# Install script for directory: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hao/balance_robot_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hao/balance_robot_ws/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controller.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controller.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/balance_robot_controller/cmake" TYPE FILE FILES
-    "/home/hao/balance_robot_ws/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controllerConfig.cmake"
-    "/home/hao/balance_robot_ws/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controllerConfig-version.cmake"
+    "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controllerConfig.cmake"
+    "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/catkin_generated/installspace/balance_robot_controllerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/balance_robot_controller" TYPE FILE FILES "/home/hao/balance_robot_ws/src/balance_robo_controller/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/balance_robot_controller" TYPE FILE FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +59,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbalance_robot_controller.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbalance_robot_controller.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbalance_robot_controller.so")
     file(RPATH_CHANGE
@@ -76,10 +76,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/balance_robot_controller" TYPE DIRECTORY FILES "/home/hao/balance_robot_ws/src/balance_robo_controller/include/balance_robot_controller/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/balance_robot_controller" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/include/balance_robot_controller/" FILES_MATCHING REGEX "/[^/]*\\.h$" REGEX "/\\.svn$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/balance_robot_controller" TYPE FILE FILES "/home/hao/balance_robot_ws/src/balance_robo_controller/balance_robot_controller_plugin.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/balance_robot_controller" TYPE FILE FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/balance_robot_controller_plugin.xml")
 endif()
 

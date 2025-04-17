@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.pdb"
-  "/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.pdb"
+  "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so"
   "CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o"
   "CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o"
   "CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o"

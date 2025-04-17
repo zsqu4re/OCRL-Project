@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hao/balance_robot_ws/src
+CMAKE_SOURCE_DIR = /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hao/balance_robot_ws/build
+CMAKE_BINARY_DIR = /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build
 
 # Include any dependencies generated for this target.
 include balance_robo_controller/CMakeFiles/balance_robot_controller.dir/depend.make
@@ -58,82 +58,82 @@ include balance_robo_controller/CMakeFiles/balance_robot_controller.dir/progress
 include balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/balance_robot_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/balance_robot_controller.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/balance_robot_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/balance_robot_controller.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/balance_robot_controller.cpp > CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/balance_robot_controller.cpp > CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/balance_robot_controller.cpp -o CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/balance_robot_controller.cpp -o CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.s
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_pos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_pos.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_pos.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_pos.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_pos.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_pos.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_pos.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_pos.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.s
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_spd.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_spd.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_spd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_spd.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_spd.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_spd.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_spd.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_spd.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.s
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_conv.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_conv.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_conv.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_conv.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_conv.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_conv.cpp > CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/leg_conv.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/leg_conv.cpp -o CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.s
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/lqr_k.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/lqr_k.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/lqr_k.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/lqr_k.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/lqr_k.cpp > CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/lqr_k.cpp > CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/lqr_k.cpp -o CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/lqr_k.cpp -o CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.s
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/flags.make
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o: /home/hao/balance_robot_ws/src/balance_robo_controller/src/pid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o -c /home/hao/balance_robot_ws/src/balance_robo_controller/src/pid.cpp
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/pid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o -c /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/pid.cpp
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/balance_robot_controller.dir/src/pid.cpp.i"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hao/balance_robot_ws/src/balance_robo_controller/src/pid.cpp > CMakeFiles/balance_robot_controller.dir/src/pid.cpp.i
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/pid.cpp > CMakeFiles/balance_robot_controller.dir/src/pid.cpp.i
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/balance_robot_controller.dir/src/pid.cpp.s"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hao/balance_robot_ws/src/balance_robo_controller/src/pid.cpp -o CMakeFiles/balance_robot_controller.dir/src/pid.cpp.s
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller/src/pid.cpp -o CMakeFiles/balance_robot_controller.dir/src/pid.cpp.s
 
 # Object files for target balance_robot_controller
 balance_robot_controller_OBJECTS = \
@@ -147,57 +147,57 @@ balance_robot_controller_OBJECTS = \
 # External object files for target balance_robot_controller
 balance_robot_controller_EXTERNAL_OBJECTS =
 
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/build.make
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libclass_loader.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libPocoFoundation.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroslib.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librospack.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libpython3.8.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf2_ros.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libactionlib.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libmessage_filters.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroscpp.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf2.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librostime.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libcpp_common.so
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hao/balance_robot_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so"
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/balance_robot_controller.dir/link.txt --verbose=$(VERBOSE)
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/balance_robot_controller.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_pos.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_spd.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/leg_conv.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/lqr_k.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/src/pid.cpp.o
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/build.make
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libclass_loader.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libPocoFoundation.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroslib.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librospack.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf2_ros.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libactionlib.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libmessage_filters.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroscpp.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libtf2.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/librostime.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /opt/ros/noetic/lib/libcpp_common.so
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so: balance_robo_controller/CMakeFiles/balance_robot_controller.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so"
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/balance_robot_controller.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-balance_robo_controller/CMakeFiles/balance_robot_controller.dir/build: /home/hao/balance_robot_ws/devel/lib/libbalance_robot_controller.so
+balance_robo_controller/CMakeFiles/balance_robot_controller.dir/build: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel/lib/libbalance_robot_controller.so
 
 .PHONY : balance_robo_controller/CMakeFiles/balance_robot_controller.dir/build
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/clean:
-	cd /home/hao/balance_robot_ws/build/balance_robo_controller && $(CMAKE_COMMAND) -P CMakeFiles/balance_robot_controller.dir/cmake_clean.cmake
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller && $(CMAKE_COMMAND) -P CMakeFiles/balance_robot_controller.dir/cmake_clean.cmake
 .PHONY : balance_robo_controller/CMakeFiles/balance_robot_controller.dir/clean
 
 balance_robo_controller/CMakeFiles/balance_robot_controller.dir/depend:
-	cd /home/hao/balance_robot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hao/balance_robot_ws/src /home/hao/balance_robot_ws/src/balance_robo_controller /home/hao/balance_robot_ws/build /home/hao/balance_robot_ws/build/balance_robo_controller /home/hao/balance_robot_ws/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/balance_robo_controller/CMakeFiles/balance_robot_controller.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : balance_robo_controller/CMakeFiles/balance_robot_controller.dir/depend
 

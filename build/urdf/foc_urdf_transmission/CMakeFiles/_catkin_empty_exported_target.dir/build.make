@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hao/balance_robot_ws/src
+CMAKE_SOURCE_DIR = /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hao/balance_robot_ws/build
+CMAKE_BINARY_DIR = /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/build: _
 .PHONY : urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/hao/balance_robot_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hao/balance_robot_ws/src /home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission /home/hao/balance_robot_ws/build /home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission /home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : urdf/foc_urdf_transmission/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

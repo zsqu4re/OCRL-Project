@@ -1,2 +1,2 @@
 balance_robo_controller:urdf/foc_urdf_transmission
--DCATKIN_DEVEL_PREFIX=/home/hao/balance_robot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hao/balance_robot_ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel -DCMAKE_INSTALL_PREFIX=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install -G Unix Makefiles

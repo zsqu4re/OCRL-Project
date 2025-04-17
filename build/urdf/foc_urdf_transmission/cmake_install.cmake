@@ -1,8 +1,8 @@
-# Install script for directory: /home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission
+# Install script for directory: /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hao/balance_robot_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,33 +38,33 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdf.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdf.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/cmake" TYPE FILE FILES
-    "/home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdfConfig.cmake"
-    "/home/hao/balance_robot_ws/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdfConfig-version.cmake"
+    "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdfConfig.cmake"
+    "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/build/urdf/foc_urdf_transmission/catkin_generated/installspace/foc_urdfConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf" TYPE FILE FILES "/home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf" TYPE FILE FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/config" TYPE DIRECTORY FILES "/home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission/config/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/config" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission/config/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/launch" TYPE DIRECTORY FILES "/home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/launch" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/meshes" TYPE DIRECTORY FILES "/home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission/meshes/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/meshes" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission/meshes/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/urdf" TYPE DIRECTORY FILES "/home/hao/balance_robot_ws/src/urdf/foc_urdf_transmission/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/foc_urdf/urdf" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/urdf/foc_urdf_transmission/urdf/")
 endif()
 

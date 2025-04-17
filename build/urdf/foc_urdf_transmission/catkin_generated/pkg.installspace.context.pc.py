@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "foc_urdf"
-PROJECT_SPACE_DIR = "/home/hao/balance_robot_ws/install"
+PROJECT_SPACE_DIR = "/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install"
 PROJECT_VERSION = "1.0.0"

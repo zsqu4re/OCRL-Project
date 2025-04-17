@@ -67,14 +67,14 @@ set(balance_robot_controller_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(balance_robot_controller_SOURCE_PREFIX /home/hao/balance_robot_ws/src/balance_robo_controller)
-  set(balance_robot_controller_DEVEL_PREFIX /home/hao/balance_robot_ws/devel)
+  set(balance_robot_controller_SOURCE_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/src/balance_robo_controller)
+  set(balance_robot_controller_DEVEL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel)
   set(balance_robot_controller_INSTALL_PREFIX "")
   set(balance_robot_controller_PREFIX ${balance_robot_controller_DEVEL_PREFIX})
 else()
   set(balance_robot_controller_SOURCE_PREFIX "")
   set(balance_robot_controller_DEVEL_PREFIX "")
-  set(balance_robot_controller_INSTALL_PREFIX /home/hao/balance_robot_ws/install)
+  set(balance_robot_controller_INSTALL_PREFIX /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install)
   set(balance_robot_controller_PREFIX ${balance_robot_controller_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/hao/balance_robot_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

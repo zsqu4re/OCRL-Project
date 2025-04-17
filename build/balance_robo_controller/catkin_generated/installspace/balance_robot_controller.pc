@@ -1,4 +1,4 @@
-prefix=/home/hao/balance_robot_ws/install
+prefix=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/install
 
 Name: balance_robot_controller
 Description: Description of balance_robot_controller
