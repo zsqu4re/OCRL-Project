@@ -1,0 +1,2 @@
+balance_robo_controller:urdf/foc_urdf_transmission
+-DCATKIN_DEVEL_PREFIX=/home/hao/balance_robot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hao/balance_robot_ws/install -G Unix Makefiles

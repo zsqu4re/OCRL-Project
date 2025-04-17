@@ -1,0 +1,60 @@
+# 平衡机器人控制器配置
+# 添加joint_state_controller
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  # Hz
+  
+# 平衡机器人控制器配置
+balance_robot_controller:
+  type: balance_robot_controller/BalanceRobotController
+  publish_rate: 50
+  # 其他配置保持不变
+  
+  # 控制的关节列表
+  joints:
+    - joint01_left     # 左前腿关节
+    - joint01_right    # 右前腿关节
+    - joint04_left     # 左后腿关节
+    - joint04_right    # 右后腿关节
+    - joint_tire_left  # 左轮
+    - joint_tire_right # 右轮
+    
+  # 控制器参数
+  gains:
+    # Yaw控制器（航向）
+    yaw_p: 10.0
+    yaw_i: 0.0
+    yaw_d: 0.0
+    yaw_max_i: 0.0
+    yaw_max_out: 2.0
+    
+    # Roll控制器（侧倾）
+    roll_p: 20.0
+    roll_i: 0.0
+    roll_d: 0.0
+    roll_max_i: 0.0
+    roll_max_out: 3.0
+    
+    # 腿部长度控制器
+    leg_length_p: 5.0
+    leg_length_i: 0.0
+    leg_length_d: 0.0
+    leg_length_max_i: 0.0
+    leg_length_max_out: 0.5
+    
+    # 腿部角度控制器
+    leg_angle_p: 12.0
+    leg_angle_i: 0.0
+    leg_angle_d: 0.0
+    leg_angle_max_i: 0.0
+    leg_angle_max_out: 20.0
+    
+  # 目标值
+  target:
+    leg_length: 0.07   # 目标腿长(m)
+    roll_angle: 0.0    # 目标侧倾角(rad)
+    
+  # 物理参数
+  physics:
+    wheel_radius: 0.026  # 车轮半径(m)
+    leg_mass: 0.05       # 腿部质量(kg)
