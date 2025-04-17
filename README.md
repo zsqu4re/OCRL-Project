@@ -1,3 +1,6 @@
+## FOC_Wheel_Leg Robot LQR + PID Controller
+
+### instruction
 下载到本地的workspace
 ```
 mkdir -p/xxx_ws
