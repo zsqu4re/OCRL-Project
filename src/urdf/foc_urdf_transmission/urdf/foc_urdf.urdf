@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="foc_urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="4.0985E-05 2.3731E-06 0.020422"
+        rpy="0 0 0" />
+      <mass
+        value="0.31081" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leg01_left">
+    <inertial>
+      <origin
+        xyz="0.0221447038061123 0.00634792285412014 0.0027360300460214"
+        rpy="0 0 0" />
+      <mass
+        value="0.00777564125771859" />
+      <inertia
+        ixx="7.0948231467366E-07"
+        ixy="-6.42299722227134E-07"
+        ixz="1.24689061110661E-08"
+        iyy="2.76602302702901E-06"
+        iyz="3.57429762858066E-09"
+        izz="3.42452671783293E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg01_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg01_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint01_left"
+    type="revolute">
+    <origin
+      xyz="0.0299960292290539 0.0665000000000001 0.0299999999999997"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg01_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <link
+    name="leg12_left">
+    <inertial>
+      <origin
+        xyz="-0.0486890458899342 0.0384741223757148 0.00253876564892452"
+        rpy="0 0 0" />
+      <mass
+        value="0.0122831195429796" />
+      <inertia
+        ixx="5.45666544067798E-06"
+        ixy="6.16819268406937E-06"
+        ixz="7.49058329392722E-09"
+        iyy="8.37933495450643E-06"
+        iyz="-5.43762911193335E-09"
+        izz="1.37770829198511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint12_left"
+    type="revolute">
+    <origin
+      xyz="0.0480642169074416 0.0137779190400616 0.00600000000000019"
+      rpy="0 0 0" />
+    <parent
+      link="leg01_left" />
+    <child
+      link="leg12_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <link
+    name="leg23_left">
+    <inertial>
+      <origin
+        xyz="-0.0365995162179509 -0.0355403747852016 -0.00343582660253755"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="6.7007206557668E-06"
+        ixy="-6.335870261632E-06"
+        ixz="6.97705371621462E-09"
+        iyy="7.05630381202052E-06"
+        iyz="6.77504699320961E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint23_left"
+    type="revolute">
+    <origin
+      xyz="-0.0824127197256137 0.0650626131309483 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_left" />
+    <child
+      link="leg23_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+
+  <link
+    name="tire_left">
+    <inertial>
+      <origin
+        xyz="9.24260668000443E-15 3.60822483003176E-16 0.0133518971401667"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328045076876881" />
+      <inertia
+        ixx="6.31445786159621E-06"
+        ixy="5.29395592033938E-22"
+        ixz="9.27216757513767E-22"
+        iyy="6.31445786159621E-06"
+        iyz="5.35314043413251E-22"
+        izz="1.05787727489276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_tire_left"
+    type="revolute">
+    <origin
+      xyz="-0.082412719725648 0.0650626131309466 0.00949999999999991"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_left" />
+    <child
+      link="tire_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <link
+    name="leg04_left">
+    <inertial>
+      <origin
+        xyz="-0.0133993206025407 0.00153499585780711 0.00673551057779115"
+        rpy="0 0 0" />
+      <mass
+        value="0.0104336042175876" />
+      <inertia
+        ixx="8.25110884381523E-07"
+        ixy="2.74179066890273E-07"
+        ixz="1.28868060772656E-08"
+        iyy="3.18707167027815E-06"
+        iyz="-1.47628335314753E-09"
+        izz="3.96277069997221E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg04_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg04_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint04_left"
+    type="revolute">
+    <origin
+      xyz="-0.030004 0.0665 0.03"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg04_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <!-- <link
+    name="leg43_left">
+    <inertial>
+      <origin
+        xyz="0.0387270883962553 0.0376094894477211 -0.00343582660253759"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="6.7007206557668E-06"
+        ixy="-6.335870261632E-06"
+        ixz="6.97705371621635E-09"
+        iyy="7.05630381202052E-06"
+        iyz="6.77504699321142E-09"
+        izz="1.36906272520063E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="joint43_left"
+    type="revolute">
+    <origin
+      xyz="-0.0496751074323783 0.00569066793808726 0.00600000000000021"
+      rpy="0 0 0" />
+    <parent
+      link="leg04_left" />
+    <child
+      link="leg43_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint> -->
+
+
+  <link
+    name="leg1_right">
+    <inertial>
+      <origin
+        xyz="-0.0227474507230983 -0.00363833984385015 -0.00273603004602125"
+        rpy="0 0 0" />
+      <mass
+        value="0.00777564125771859" />
+      <inertia
+        ixx="5.85847256879408E-07"
+        ixy="-3.78157078247889E-07"
+        ixz="1.28082938339725E-08"
+        iyy="2.88965808482326E-06"
+        iyz="2.04861714502811E-09"
+        izz="3.42452671783293E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg1_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint01_right"
+    type="revolute">
+    <origin
+      xyz="-0.030004 -0.0665 0.03"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg1_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.745"
+      upper="1.745"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <link
+    name="leg12_right">
+    <inertial>
+      <origin
+        xyz="0.0418369874536516 0.0458317331448373 -0.00253876564892444"
+        rpy="0 0 0" />
+      <mass
+        value="0.0122831195429796" />
+      <inertia
+        ixx="7.49888378503167E-06"
+        ixy="-6.31226381874333E-06"
+        ixz="6.51417091396927E-09"
+        iyy="6.33711661015278E-06"
+        iyz="6.57588212681798E-09"
+        izz="1.37770829198511E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg12_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint12_right"
+    type="revolute">
+    <origin
+      xyz="-0.0493724555181215 -0.00789687508525072 -0.00600000000000008"
+      rpy="0 0 0" />
+    <parent
+      link="leg1_right" />
+    <child
+      link="leg12_right" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+  <link
+    name="leg23_right">
+    <inertial>
+      <origin
+        xyz="0.0424021601313229 -0.0283672283358802 0.00343582660253751"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="4.46727299752815E-06"
+        ixy="5.8618074996111E-06"
+        ixz="8.08320764833507E-09"
+        iyy="9.28975147025914E-06"
+        iyz="-5.40761448641617E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg23_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint23_right"
+    type="revolute">
+    <origin
+      xyz="0.0708243810933835 0.0775171403157984 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_right" />
+    <child
+      link="leg23_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="20"
+      velocity="30" />
+  </joint>
+  
+  <link
+    name="tire_right">
+    <inertial>
+      <origin
+        xyz="-1.90680804479371E-14 -1.38500322321988E-14 -0.0133518971401667"
+        rpy="0 0 0" />
+      <mass
+        value="0.0328045076876881" />
+      <inertia
+        ixx="6.31445786159621E-06"
+        ixy="-1.05879118406788E-22"
+        ixz="-6.24938907378752E-22"
+        iyy="6.31445786159621E-06"
+        iyz="-1.0241673981824E-20"
+        izz="1.05787727489276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/tire_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_tire_right"
+    type="revolute">
+    <origin
+      xyz="0.0708243810933964 0.0775171403158044 -0.00949999999999991"
+      rpy="0 0 0" />
+    <parent
+      link="leg12_right" />
+    <child
+      link="tire_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="leg04_right">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg04_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg04_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint04_right"
+    type="revolute">
+    <origin
+      xyz="0.029996029229054 -0.0664999999999999 0.0300000000000001"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leg04_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="20"
+      velocity="30" />
+  </joint>
+
+  <!-- <link
+    name="leg43_right">
+    <inertial>
+      <origin
+        xyz="-0.0448676071368272 0.0300193088192324 0.00343582660253768"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="4.46727299752815E-06"
+        ixy="5.8618074996111E-06"
+        ixz="8.08320764832045E-09"
+        iyy="9.28975147025914E-06"
+        iyz="-5.40761448640519E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="joint43_right"
+    type="revolute">
+    <origin
+      xyz="0.0487216928434121 0.0112337280754352 -0.00600000000000014"
+      rpy="0 0 0" />
+    <parent
+      link="leg04_right" />
+    <child
+      link="leg43_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint> -->
+
+  <gazebo>
+    <joint name="joint43_left" type="revolute">
+      <pose relative_to="leg04_left">-0.0496751074323783 0.00569066793808726 0.00600000000000021 0 0 0</pose>
+      <parent>leg04_left</parent>
+      <child>leg23_left</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0.698</lower>
+          <upper>2.09</upper>
+          <effort>20</effort>
+          <velocity>30</velocity>
+        </limit>
+      </axis>
+      <dynamics>
+        <friction>0.01</friction>
+        <damping>0.01</damping>
+      </dynamics>
+    </joint>
+  </gazebo>
+
+  <gazebo>
+    <joint name="joint43_right" type="revolute">
+      <pose relative_to="joint04_right">0.0487216928434121 0.0112337280754352 -0.00600000000000014 0 0 0</pose>
+      <parent>leg04_right</parent>
+      <child>leg23_right</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.443</lower>
+          <upper>-1.047</upper>
+          <effort>20</effort>
+          <velocity>30</velocity>
+        </limit>
+      </axis>
+      <dynamics>
+        <friction>0.01</friction>
+        <damping>0.01</damping>
+      </dynamics>
+    </joint>
+  </gazebo>
+
+  <transmission name="trans_joint01_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint01_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint01_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_joint01_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint01_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint01_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_joint04_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint04_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint04_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_joint04_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint04_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint04_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_joint_tire_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_tire_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint_tire_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="trans_joint_tire_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_tire_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint_tire_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <gaussianNoise>0.0001</gaussianNoise>
+      <bodyName>base_link</bodyName>
+      <frameName>base_link</frameName>
+      <topicName>imu/data</topicName>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="tire_left">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+  <gazebo reference="tire_right">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+
+<!-- <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <ros>
+      <namespace>/</namespace>
+      <argument>joint_states:=joint_states</argument>
+    </ros>
+    <robotNamespace>/</robotNamespace>
+    <robotParam>robot_description</robotParam>
+    <updateRate>100</updateRate>
+  </plugin>
+</gazebo> -->
+
+</robot>
