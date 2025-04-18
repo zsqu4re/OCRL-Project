@@ -12,12 +12,12 @@ effort_joint_trajectory_controller:
     - joint_tire_left
     - joint_tire_right
   gains:
-    joint01_left: {p: 100.0, i: 0.01, d: 10.0}
-    joint01_right: {p: 100.0, i: 0.01, d: 10.0}
-    joint04_left: {p: 100.0, i: 0.01, d: 10.0}
-    joint04_right: {p: 100.0, i: 0.01, d: 10.0}
-    joint_tire_left: {p: 100.0, i: 0.01, d: 10.0}
-    joint_tire_right: {p: 100.0, i: 0.01, d: 10.0}
+    joint01_left: {p: 10.0, i: 0.01, d: 10.0}
+    joint01_right: {p: 10.0, i: 0.01, d: 10.0}
+    joint04_left: {p: 10.0, i: 0.01, d: 10.0}
+    joint04_right: {p: 10.0, i: 0.01, d: 10.0}
+    joint_tire_left: {p: 10.0, i: 0.01, d: 10.0}
+    joint_tire_right: {p: 10.0, i: 0.01, d: 10.0}
 
 # joint_state_controller:
 #   type: joint_state_controller/JointStateController
