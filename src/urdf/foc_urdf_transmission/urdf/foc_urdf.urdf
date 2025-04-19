@@ -101,9 +101,7 @@
       upper="1.396"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
-
   <link
     name="leg12_left">
     <inertial>
@@ -144,7 +142,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="joint12_left"
     type="revolute">
@@ -162,9 +159,7 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
-
   <link
     name="leg23_left">
     <inertial>
@@ -223,7 +218,6 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
 
   <link
@@ -264,22 +258,8 @@
         <mesh
           filename="package://foc_urdf/meshes/tire_left.STL" />
       </geometry>
-      <surface>
-      <friction>
-        <ode>
-          <!-- lateral friction -->
-          <mu>10.0</mu>
-          <mu2>10.0</mu2>
-        </ode>
-      </friction>
-      <!-- rolling and torsional friction to resist slow drift -->
-      <rolling_friction>0.1</rolling_friction>
-      <torsional_friction>0.1</torsional_friction>
-    </surface>
     </collision>
   </link>
-
-
   <joint
     name="joint_tire_left"
     type="revolute">
@@ -297,9 +277,7 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
-
   <link
     name="leg04_left">
     <inertial>
@@ -340,7 +318,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="joint04_left"
     type="revolute">
@@ -358,8 +335,68 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
+  <!-- <link
+    name="leg43_left">
+    <inertial>
+      <origin
+        xyz="0.0387270883962553 0.0376094894477211 -0.00343582660253759"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="6.7007206557668E-06"
+        ixy="-6.335870261632E-06"
+        ixz="6.97705371621635E-09"
+        iyy="7.05630381202052E-06"
+        iyz="6.77504699321142E-09"
+        izz="1.36906272520063E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="joint43_left"
+    type="revolute">
+    <origin
+      xyz="-0.0496751074323783 0.00569066793808726 0.00600000000000021"
+      rpy="0 0 0" />
+    <parent
+      link="leg04_left" />
+    <child
+      link="leg43_left" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint> -->
+
 
   <link
     name="leg1_right">
@@ -401,7 +438,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="joint01_right"
     type="revolute">
@@ -419,9 +455,7 @@
       upper="1.745"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
-
   <link
     name="leg12_right">
     <inertial>
@@ -462,7 +496,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="joint12_right"
     type="revolute">
@@ -480,9 +513,7 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
-
   <link
     name="leg23_right">
     <inertial>
@@ -541,7 +572,6 @@
       upper="1.57"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
   
   <link
@@ -582,21 +612,8 @@
         <mesh
           filename="package://foc_urdf/meshes/tire_right.STL" />
       </geometry>
-         <surface>
-      <friction>
-        <ode>
-          <!-- lateral friction -->
-          <mu>10.0</mu>
-          <mu2>10.0</mu2>
-        </ode>
-      </friction>
-      <!-- rolling and torsional friction to resist slow drift -->
-      <rolling_friction>0.1</rolling_friction>
-      <torsional_friction>0.1</torsional_friction>
-    </surface>
     </collision>
   </link>
-
   <joint
     name="joint_tire_right"
     type="revolute">
@@ -612,11 +629,9 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="20"
-      velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
+      effort="0"
+      velocity="0" />
   </joint>
-
   <link
     name="leg04_right">
     <inertial>
@@ -657,7 +672,6 @@
       </geometry>
     </collision>
   </link>
-
   <joint
     name="joint04_right"
     type="revolute">
@@ -675,8 +689,67 @@
       upper="1.396"
       effort="20"
       velocity="30" />
-    <dynamics damping="0.05" friction="0.0"/>
   </joint>
+
+  <!-- <link
+    name="leg43_right">
+    <inertial>
+      <origin
+        xyz="-0.0448676071368272 0.0300193088192324 0.00343582660253768"
+        rpy="0 0 0" />
+      <mass
+        value="0.0111561368021954" />
+      <inertia
+        ixx="4.46727299752815E-06"
+        ixy="5.8618074996111E-06"
+        ixz="8.08320764832045E-09"
+        iyy="9.28975147025914E-06"
+        iyz="-5.40761448640519E-09"
+        izz="1.36906272520062E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://foc_urdf/meshes/leg43_right.STL" />
+      </geometry>
+    </collision>
+  </link> 
+
+  <joint
+    name="joint43_right"
+    type="revolute">
+    <origin
+      xyz="0.0487216928434121 0.0112337280754352 -0.00600000000000014"
+      rpy="0 0 0" />
+    <parent
+      link="leg04_right" />
+    <child
+      link="leg43_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint> -->
 
   <gazebo>
     <joint name="joint43_left" type="revolute">
@@ -693,8 +766,8 @@
         </limit>
       </axis>
       <dynamics>
-        <friction>0.0</friction>
-        <damping>0.05</damping>
+        <friction>0.01</friction>
+        <damping>0.01</damping>
       </dynamics>
     </joint>
   </gazebo>
@@ -714,8 +787,8 @@
         </limit>
       </axis>
       <dynamics>
-        <friction>0.0</friction>
-        <damping>0.05</damping>
+        <friction>0.01</friction>
+        <damping>0.01</damping>
       </dynamics>
     </joint>
   </gazebo>
@@ -801,19 +874,6 @@
       <frameName>base_link</frameName>
       <topicName>imu/data</topicName>
     </plugin>
-  </gazebo>
-
-  <gazebo reference="tire_left">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <!-- <kp>10000000.0</kp>
-    <kd>1.0</kd> -->
-  </gazebo>
-  <gazebo reference="tire_right">
-    <mu1>1.0</mu1>
-    <mu2>1.0</mu2>
-    <!-- <kp>10000000.0</kp>
-    <kd>1.0</kd> -->
   </gazebo>
 
 

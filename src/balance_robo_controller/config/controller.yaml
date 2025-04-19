@@ -16,8 +16,8 @@ balance_robot_controller:
     - joint01_right    # 右前腿关节
     - joint04_left     # 左后腿关节
     - joint04_right    # 右后腿关节
-    # - joint_tire_left  # 左轮
-    # - joint_tire_right # 右轮
+    - joint_tire_left  # 左轮
+    - joint_tire_right # 右轮
     
   # 控制器参数
   gains:
