@@ -573,11 +573,11 @@ private:
     // joints_[4].setCommand(leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
     // joints_[5].setCommand(rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
 
-    joints_[0].setCommand(-leftJointTorque[0]);    // joint01_left，轴向为-1，负号正确
+    joints_[0].setCommand(leftJointTorque[0]);    // joint01_left，轴向为-1，负号正确
     joints_[1].setCommand(rightJointTorque[0]);    // joint01_right，轴向为1，应去掉负号
-    joints_[2].setCommand(-leftJointTorque[1]);    // joint04_left，轴向为-1，负号正确
+    joints_[2].setCommand(leftJointTorque[1]);    // joint04_left，轴向为-1，负号正确
     joints_[3].setCommand(rightJointTorque[1]);    // joint04_right，轴向为1，应去掉负号
-    joints_[4].setCommand(-leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
+    joints_[4].setCommand(leftWheelTorque);        // joint_tire_left，轴向为-1，可能需要调整
     joints_[5].setCommand(rightWheelTorque);      // joint_tire_right，轴向为1，可能需要调整
 
 

@@ -1,41 +1,40 @@
 <launch>
-  <!-- 加载机器人描述参数 -->
-  <param name="robot_description" textfile="$(find foc_urdf)/urdf/foc_urdf.urdf" />
+  <!-- 1. Load URDF -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find foc_urdf)/urdf/foc_urdf.urdf"/>
 
-  <!-- 启动Gazebo仿真环境 -->
+  <!-- 2. Start Gazebo -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
-    <!-- 移除不兼容的参数 -->
   </include>
 
-  <!-- 在Gazebo中加载机器人 -->
-  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" 
-        args="-urdf -model balance_robot -param robot_description -x 0.0 -y 0.0 -z 0.1 -R 0 -P 0 -Y 0" 
-        output="screen" />
+  <!-- 3. Spawn the robot with correct args order -->
+  <node name="spawn_balance_robot"
+        pkg="gazebo_ros" type="spawn_model"
+        output="screen"
+        args="
+          -urdf
+          -param robot_description
+          -model balance_robot
+          -x 0 -y 0 -z 0.1
+        "/>
 
-  <!-- 加载控制器配置，指定命名空间 -->
-  <rosparam file="$(find balance_robot_controller)/config/controller.yaml" command="load" ns="/"/>
+  <!-- 4. Load controllers & YAML in the same ns -->
+  <group ns="balance_robot">
+    <rosparam command="load"
+              file="$(find balance_robot_controller)/config/controller.yaml"/>
 
-  <!-- 首先加载joint_state_controller -->
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" 
-        respawn="false" output="screen" ns="/"
-        args="joint_state_controller" />
-        
-  <!-- 然后加载平衡控制器 -->
-  <node name="balance_controller_spawner" pkg="controller_manager" type="spawner" 
-        respawn="false" output="screen" ns="/"
-        args="balance_robot_controller" />
+    <node pkg="controller_manager" type="spawner"
+          name="balance_spawner"
+          args="joint_state_controller balance_robot_controller --timeout 60"
+          output="screen"/>
+  </group>
 
-  <!-- 启动键盘遥控 -->
-  <node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" 
+  <!-- 5. Tele‑op -->
+  <!-- <node pkg="teleop_twist_keyboard"
+        type="teleop_twist_keyboard.py"
+        name="teleop_keyboard"
         output="screen">
-    <remap from="cmd_vel" to="/cmd_vel" />
-  </node>
-  
-  <!-- 添加ROS环境变量设置 -->
-  <env name="ROS_HOSTNAME" value="localhost" />
+    <remap from="cmd_vel" to="/cmd_vel"/>
+  </node> -->
 </launch>
