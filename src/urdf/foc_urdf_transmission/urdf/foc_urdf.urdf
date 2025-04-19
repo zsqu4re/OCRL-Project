@@ -11,14 +11,14 @@
         xyz="4.0985E-05 2.3731E-06 0.020422"
         rpy="0 0 0" />
       <mass
-        value="0.58492" />
+        value="0.31081" />
       <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+        ixx="0.00013006"
+        ixy="1.4002E-09"
+        ixz="-5.5833E-08"
+        iyy="0.00021208"
+        iyz="-1.5623E-09"
+        izz="0.00027627"/>
     </inertial>
     <visual>
       <origin
@@ -594,8 +594,8 @@
     <limit
       lower="-1.57"
       upper="1.57"
-      effort="0"
-      velocity="0" />
+      effort="20"
+      velocity="30" />
   </joint>
   <link
     name="leg04_right">
