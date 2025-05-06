@@ -1,0 +1,4 @@
+urdf/foc_urdf_transmission
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/foc_urdf/lib/pkgconfig/foc_urdf.pc /home/zsqu4re/Desktop/OCRL-Project/devel/lib/pkgconfig/foc_urdf.pc
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/foc_urdf/share/foc_urdf/cmake/foc_urdfConfig.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/foc_urdf/cmake/foc_urdfConfig.cmake
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/foc_urdf/share/foc_urdf/cmake/foc_urdfConfig-version.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/foc_urdf/cmake/foc_urdfConfig-version.cmake

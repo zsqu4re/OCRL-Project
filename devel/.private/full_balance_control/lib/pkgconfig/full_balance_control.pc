@@ -1,0 +1,8 @@
+prefix=/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control
+
+Name: full_balance_control
+Description: Description of full_balance_control
+Version: 0.0.1
+Cflags: -I/home/zsqu4re/Desktop/OCRL-Project/src/full_balance_control/include
+Libs: -L${prefix}/lib -lfull_balance_controller
+Requires: controller_interface hardware_interface pluginlib realtime_tools roscpp tf sensor_msgs

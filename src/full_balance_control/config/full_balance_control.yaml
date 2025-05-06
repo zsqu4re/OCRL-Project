@@ -1,3 +1,7 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
 full_balance_controller:
   type: "full_balance_control/FullBalanceController"
   Krp: 50.0

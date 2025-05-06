@@ -1,0 +1,5 @@
+balance_robo_controller
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/balance_robot_controller/lib/libbalance_robot_controller.so /home/zsqu4re/Desktop/OCRL-Project/devel/lib/libbalance_robot_controller.so
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/balance_robot_controller/lib/pkgconfig/balance_robot_controller.pc /home/zsqu4re/Desktop/OCRL-Project/devel/lib/pkgconfig/balance_robot_controller.pc
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/balance_robot_controller/share/balance_robot_controller/cmake/balance_robot_controllerConfig.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/balance_robot_controller/cmake/balance_robot_controllerConfig.cmake
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/balance_robot_controller/share/balance_robot_controller/cmake/balance_robot_controllerConfig-version.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/balance_robot_controller/cmake/balance_robot_controllerConfig-version.cmake

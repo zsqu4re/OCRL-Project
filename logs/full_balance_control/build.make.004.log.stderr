@@ -1,0 +1,7 @@
+[01m[K/home/zsqu4re/Desktop/OCRL-Project/src/full_balance_control/src/FullBalanceController.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kinclude/full_balance_control/FullBalanceController.hpp: No such file or directory
+    1 | #include [01;31m[K"include/full_balance_control/FullBalanceController.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/full_balance_controller.dir/build.make:63: CMakeFiles/full_balance_controller.dir/src/FullBalanceController.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1265: CMakeFiles/full_balance_controller.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

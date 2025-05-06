@@ -1,0 +1,1 @@
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/balance_robot_controller/lib/pkgconfig/balance_robot_controller.pc

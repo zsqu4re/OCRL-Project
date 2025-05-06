@@ -1,0 +1,8 @@
+prefix=/home/zsqu4re/Desktop/OCRL-Project/install
+
+Name: full_balance_control
+Description: Description of full_balance_control
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lfull_balance_controller
+Requires: controller_interface hardware_interface pluginlib realtime_tools roscpp tf sensor_msgs

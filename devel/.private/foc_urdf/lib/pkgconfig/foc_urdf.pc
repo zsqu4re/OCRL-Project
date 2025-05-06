@@ -1,0 +1,8 @@
+prefix=/home/zsqu4re/Desktop/OCRL-Project/devel/.private/foc_urdf
+
+Name: foc_urdf
+Description: Description of foc_urdf
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

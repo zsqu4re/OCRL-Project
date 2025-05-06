@@ -1,20 +1,18 @@
 {
   "configurations": [
     {
-      "browse": {
-        "databaseFilename": "${default}",
-        "limitSymbolsToIncludedHeaders": false
-      },
-      "includePath": [
-        "/opt/ros/noetic/include/**",
-        "/home/hao/balance_robot_ws/src/balance_robo_controller/include/**",
-        "/usr/include/**"
-      ],
       "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
-      "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
+      "includePath": [
+        "${workspaceFolder}/src/**",
+        "${workspaceFolder}/devel/include",
+        "${workspaceFolder}/build/**",
+        "/opt/ros/noetic/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "linux-gcc-x64"
     }
   ],
   "version": 4

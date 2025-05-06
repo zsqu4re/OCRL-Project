@@ -8,12 +8,20 @@ find_package(catkin REQUIRED COMPONENTS
   realtime_tools
   roscpp
   tf
+  sensor_msgs
 )
 
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES full_balance_controller
-  CATKIN_DEPENDS controller_interface hardware_interface pluginlib realtime_tools roscpp tf
+  CATKIN_DEPENDS
+    controller_interface
+    hardware_interface
+    pluginlib
+    realtime_tools
+    roscpp
+    tf
+    sensor_msgs
 )
 
 include_directories(
@@ -24,7 +32,6 @@ include_directories(
 add_library(full_balance_controller
   src/FullBalanceController.cpp
 )
-
 target_link_libraries(full_balance_controller ${catkin_LIBRARIES})
 
 install(TARGETS full_balance_controller
@@ -34,4 +41,3 @@ install(TARGETS full_balance_controller
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
-

@@ -1,0 +1,5 @@
+full_balance_control
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control/lib/libfull_balance_controller.so /home/zsqu4re/Desktop/OCRL-Project/devel/lib/libfull_balance_controller.so
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control/lib/pkgconfig/full_balance_control.pc /home/zsqu4re/Desktop/OCRL-Project/devel/lib/pkgconfig/full_balance_control.pc
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control/share/full_balance_control/cmake/full_balance_controlConfig-version.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/full_balance_control/cmake/full_balance_controlConfig-version.cmake
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control/share/full_balance_control/cmake/full_balance_controlConfig.cmake /home/zsqu4re/Desktop/OCRL-Project/devel/share/full_balance_control/cmake/full_balance_controlConfig.cmake

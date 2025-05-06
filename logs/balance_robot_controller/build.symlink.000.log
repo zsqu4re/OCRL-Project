@@ -1,0 +1,4 @@
+Symlinking /home/zsqu4re/Desktop/OCRL-Project/devel/lib/libbalance_robot_controller.so
+Symlinking /home/zsqu4re/Desktop/OCRL-Project/devel/lib/pkgconfig/balance_robot_controller.pc
+Symlinking /home/zsqu4re/Desktop/OCRL-Project/devel/share/balance_robot_controller/cmake/balance_robot_controllerConfig.cmake
+Symlinking /home/zsqu4re/Desktop/OCRL-Project/devel/share/balance_robot_controller/cmake/balance_robot_controllerConfig-version.cmake

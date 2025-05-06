@@ -1,4 +1,22 @@
 <launch>
-  <rosparam file="$(find full_balance_control)/config/full_balance_control.yaml" command="load"/>
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="full_balance_controller" />
+  <!-- 1) Start Gazebo + spawn your URDF as before -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <param name="robot_description"
+         textfile="$(find foc_urdf)/urdf/foc_urdf.urdf" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model foc -x 0 -y 0 -z 1"
+        output="screen" />
+
+  <!-- 2) Load the two controllers you defined -->
+  <rosparam file="$(find full_balance_control)/config/full_balance_control.yaml"
+            command="load"/>
+
+  <!-- 3) Give Gazebo’s ros_control plugin time to come up -->
+  <node name="controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        respawn="false"
+        output="screen"
+        args="joint_state_controller full_balance_controller"
+        launch-prefix="bash -lc 'sleep 5; exec'" />
 </launch>

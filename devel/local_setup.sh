@@ -1,0 +1,1 @@
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/catkin_tools_prebuild/local_setup.sh

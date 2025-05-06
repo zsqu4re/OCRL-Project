@@ -1,0 +1,1 @@
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/foc_urdf/lib/pkgconfig/foc_urdf.pc

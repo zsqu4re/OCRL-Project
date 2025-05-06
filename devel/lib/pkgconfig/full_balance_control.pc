@@ -1,0 +1,1 @@
+/home/zsqu4re/Desktop/OCRL-Project/devel/.private/full_balance_control/lib/pkgconfig/full_balance_control.pc
