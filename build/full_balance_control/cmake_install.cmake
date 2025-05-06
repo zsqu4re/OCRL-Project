@@ -185,6 +185,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/full_balance_control" TYPE DIRECTORY FILES "/home/zsqu4re/Desktop/OCRL-Project/src/full_balance_control/include/full_balance_control/")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/full_balance_control" TYPE FILE FILES "/home/zsqu4re/Desktop/OCRL-Project/src/full_balance_control/plugin_description.xml")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/zsqu4re/Desktop/OCRL-Project/build/full_balance_control/gtest/cmake_install.cmake")

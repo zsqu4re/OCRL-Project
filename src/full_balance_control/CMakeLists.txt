@@ -41,3 +41,6 @@ install(TARGETS full_balance_controller
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
+
+install(FILES plugin_description.xml
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
