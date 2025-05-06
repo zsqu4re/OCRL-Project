@@ -1,0 +1,6 @@
+full_balance_controller:
+  type: "full_balance_control/FullBalanceController"
+  Krp: 50.0
+  Krd: 5.0
+  Kpp: 100.0
+  Kpd: 10.0

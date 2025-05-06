@@ -1,0 +1,5 @@
+<library path="lib/libfull_balance_controller">
+  <class name="full_balance_control/FullBalanceController" type="full_balance_control::FullBalanceController" base_class_type="controller_interface::ControllerBase">
+    <description>Full balance controller (pitch and roll)</description>
+  </class>
+</library>

@@ -22,22 +22,22 @@ balance_robot_controller:
   # 控制器参数
   gains:
     # Yaw 控制器（航向）– you probably don’t need 100 Nm/rad of yaw
-    yaw_p:        5.0
+    yaw_p:        2.0
     yaw_d:        1.0
     yaw_max_out:  1.0
 
     # Roll 控制器（侧倾）– gentler P, a bit more D
-    roll_p:       40.0    # ↓ from 100
+    roll_p:       20.0    # ↓ from 100
     roll_d:       50.0    # ↑ from 20
     roll_max_out: 3.0     # ↓ from 8
 
     # 腿部长度控制器 – must exceed static weight (~6 N)
-    leg_length_p:       80.0   # ↑ from 100, to stiffen under load
+    leg_length_p:       40.0   # ↑ from 100, to stiffen under load
     leg_length_d:       20.0    # ↑ from 8, to damp leg bounce
     leg_length_max_out: 8.0    # ↑ from 0.5, give ≈2× static load
 
     # 腿部角度控制器 – use a real P
-    leg_angle_p:        30.0    # ↑ from 5
+    leg_angle_p:        15.0    # ↑ from 5
     leg_angle_d:         10.0    # small damping
     leg_angle_max_out:   5.0    # clamp torque to ±10 Nm
 

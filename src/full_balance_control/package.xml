@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>full_balance_control</name>
+  <version>0.0.1</version>
+  <description>Full balance controller for bipedal wheeled robot (pitch and roll)</description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>controller_interface</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>realtime_tools</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  
+  <exec_depend>controller_interface</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>realtime_tools</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>tf</exec_depend>
+
+</package>

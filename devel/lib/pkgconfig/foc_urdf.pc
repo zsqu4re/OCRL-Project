@@ -1,8 +1,0 @@
-prefix=/home/zsqu4re/Desktop/catkin_ws/src/OCRL-Project/devel
-
-Name: foc_urdf
-Description: Description of foc_urdf
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

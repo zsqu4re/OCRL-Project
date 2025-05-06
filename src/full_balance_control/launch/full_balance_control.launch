@@ -1,0 +1,4 @@
+<launch>
+  <rosparam file="$(find full_balance_control)/config/full_balance_control.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="full_balance_controller" />
+</launch>
